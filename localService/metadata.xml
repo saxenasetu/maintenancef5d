@@ -1,0 +1,38 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZERAMET_PM_NOTIFICATION_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="PMNotification" sap:content-version="1">
+				<Key><PropertyRef Name="NotificationID"/></Key><Property Name="NotificationID" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Notification"
+					sap:creatable="false" sap:updatable="false"/><Property Name="NotificationType" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Notifictn Type"
+					sap:updatable="false" sap:sortable="false"/><Property Name="EquipmentID" Type="Edm.String" MaxLength="18" sap:unicode="false" sap:label="Equipment" sap:filterable="false"/><Property Name="ShortText" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Priority" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Priority" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Breakdown" Type="Edm.Boolean" sap:unicode="false" sap:label="Breakdown" sap:sortable="false" sap:filterable="false"/><Property Name="BreakdownStartDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Malfunct. Start" sap:sortable="false"/><Property Name="Degraded" Type="Edm.Boolean" sap:unicode="false" sap:label="Checkbox" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="BreakdownStartTime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Start Malfn (T)" sap:sortable="false"/><Property Name="Symptom" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Code group" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NotificationDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Notif.Date" sap:sortable="false"
+					sap:filterable="false"/><Property Name="NotificationTime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Notif. Time" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Comment" Type="Edm.String" sap:unicode="false" sap:label="COMMENT" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Equipment" sap:content-version="1">
+				<Key><PropertyRef Name="EquipmentID"/></Key><Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentID" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Equipment"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PMNotificationType" sap:content-version="1">
+				<Key><PropertyRef Name="NotificationType"/></Key><Property Name="NotificationType" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Notifictn Type"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="NotifcatnType"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PMPriority" sap:content-version="1">
+				<Key><PropertyRef Name="Priority"/></Key><Property Name="Priority" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Priority" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="PriorityDescription"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PMSymptom" sap:content-version="1">
+				<Key><PropertyRef Name="Symptom"/></Key><Property Name="Symptom" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Coding" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Short Text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZERAMET_PM_NOTIFICATION_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="NotificationSet" EntityType="ZERAMET_PM_NOTIFICATION_SRV.PMNotification" sap:pageable="false" sap:content-version="1"/><EntitySet Name="EquipmentSet" EntityType="ZERAMET_PM_NOTIFICATION_SRV.Equipment" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="NotificationTypeSet" EntityType="ZERAMET_PM_NOTIFICATION_SRV.PMNotificationType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="PrioritySet" EntityType="ZERAMET_PM_NOTIFICATION_SRV.PMPriority" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="SymptomSet" EntityType="ZERAMET_PM_NOTIFICATION_SRV.PMSymptom" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/opu/odata/sap/ZERAMET_PM_NOTIFICATION_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/opu/odata/sap/ZERAMET_PM_NOTIFICATION_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

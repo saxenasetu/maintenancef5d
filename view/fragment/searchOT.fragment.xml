@@ -1,0 +1,34 @@
+<c:FragmentDefinition controllerName="com.eramet.maintenanceF5D.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m"
+	xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout.form" 	xmlns:f="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<Dialog id="searchOTDialog" title="{i18n>searchTitle}" contentWidth="100%" stretch="true">
+		<content>
+			<SearchField
+				id="searchField"
+				enableSuggestions="true"
+				search="onSearch"
+				suggest="onSuggest"
+				suggestionItems="{ path: 'followupListModel>/'}">
+				<suggestionItems>
+					<!--<SuggestionItem -->
+					<!--	text="{path: 'followupListModel>title'}" -->
+					<!--	description="{path: 'followupListModel>text'}, {path: 'followupListModel>date'}, -->
+					<!--	{path: 'followupListModel>prio'}, {path: 'followupListModel>status'}, -->
+					<!--	{path: 'followupListModel>codePoste'}, {path: 'followupListModel>description'}" -->
+					<!--	key="{path: 'followupListModel>text'}"/>-->
+					<SuggestionItem 
+						text="{path: 'followupListModel>OrderId'}" 
+						description="{path: 'followupListModel>OrderType'}, {path: 'followupListModel>FunctionalLocation'}, 
+						{path: 'followupListModel>Priority'}, {path: 'followupListModel>SystemStatus'}, 
+						{path: 'followupListModel>StartDate'}, {path: 'followupListModel>ShortText'}" 
+						key="{path: 'followupListModel>OrderId'}"/>
+				</suggestionItems>
+			</SearchField>
+		</content>
+		
+		<buttons>
+			<Button id="acceptTypeSelector" text="{i18n>searchAccept}" press="onPressAccept" type="Ghost"></Button>			
+			<Button id="cancelTypeSelector" text="{i18n>searchCancel}" press="onPressClose" type="Ghost"></Button>
+		</buttons>
+	</Dialog>
+</c:FragmentDefinition>

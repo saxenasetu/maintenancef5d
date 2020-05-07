@@ -1,0 +1,37 @@
+<c:FragmentDefinition controllerName="com.eramet.maintenanceF5D.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m"
+	xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout.form" 	xmlns:f="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<Dialog id="searchDialog" title="{i18n>searchTitle}" contentWidth="100%" stretch="true">
+		<content>
+			<SearchField
+				id="searchField"
+				enableSuggestions="true"
+				search="onSearch"
+				suggest="onSuggest"
+				suggestionItems="{ path: 'listModel>/'}">
+				<suggestionItems>
+					<!--<SuggestionItem -->
+					<!--	text="{path: 'listModel>NotificationNumber'}" -->
+					<!--	description="{-->
+					<!--		path: 'listModel>ShortText'}, -->
+					<!--		{path: 'listModel>NotificationNumber'}, -->
+					<!--		{path: 'listModel>NotificationDate', formatter: 'com.eramet.maintenanceF5D.util.formatter.avisDate'}-->
+					<!--		{path: 'listModel>Priority'}" -->
+					<!--	key="{path: 'listModel>text'}"/>-->
+					<SuggestionItem 
+						text="{path: 'listModel>NotificationNumber'}" 
+						description="{
+							path: 'listModel>ShortText'}, 
+							{path: 'listModel>NotificationNumber'}, 
+							{path: 'listModel>Priority'}" 
+						key="{path: 'listModel>NotificationNumber'}"/>
+				</suggestionItems>
+			</SearchField>
+		</content>
+		
+		<buttons>
+			<Button id="acceptTypeSelector" text="{i18n>searchAccept}" press="onPressAccept" type="Ghost"></Button>			
+			<Button id="cancelTypeSelector" text="{i18n>searchCancel}" press="onPressClose" type="Ghost"></Button>
+		</buttons>
+	</Dialog>
+</c:FragmentDefinition>

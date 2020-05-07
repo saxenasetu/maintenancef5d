@@ -1,0 +1,277 @@
+{
+    "resources": [
+        {
+            "name": "../../maintenanceF5D/controller/BaseController-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/manifest.json"
+        },
+        {
+            "name": "../../maintenanceF5D/model/items.json"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/ToOpDetail.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/Operations.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/OTDetail.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/Followup.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/Filter.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/Article.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/InfoStock/InfoStock.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/InfoEquipment/Rattaches.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/InfoEquipment/InfoEquipment.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/InfoEquipment/DocumentTech.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/Avis/Detail.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/Avis/AvisDetail.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/util/util.js"
+        },
+        {
+            "name": "../../maintenanceF5D/util/formatter.js"
+        },
+        {
+            "name": "../../maintenanceF5D/model/models.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/Menu.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/Home.controller.js"
+        },
+        {
+            "name": "../../maintenanceF5D/controller/BaseController.js"
+        },
+        {
+            "name": "../../maintenanceF5D/Component.js"
+        },
+        {
+            "name": "../../maintenanceF5D/manifest-bundle.zip"
+        },
+        {
+            "name": "../../maintenanceF5D/Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "../../maintenanceF5D/Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/ToOpDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/Operations-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/OTDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/Followup-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/Filter-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/OT/Article-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/InfoStock/InfoStock-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/InfoEquipment/Rattaches-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/InfoEquipment/InfoEquipment-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/InfoEquipment/DocumentTech-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/Avis/Detail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/Avis/AvisDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/util/util-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/util/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/Menu-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/controller/Home-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../maintenanceF5D/i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "../../../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "../../maintenanceF5D/view/fragment/valueHelp.fragment.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/fragment/stockSelector.fragment.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/fragment/searchOT.fragment.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/fragment/search.fragment.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/fragment/refusal.fragment.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/fragment/fileUpload.fragment.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/fragment/dateDialog.fragment.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/fragment/customerDialog.fragment.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/fragment/createPopup.fragment.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/fragment/avisUpload.fragment.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/OT/ToOpDetail.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/OT/Operations.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/OT/OTDetail.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/OT/Followup.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/OT/Filter.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/OT/Article.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/InfoStock/InfoStock.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/InfoEquipment/Rattaches.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/InfoEquipment/InfoEquipment.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/InfoEquipment/DocumentTech.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/Avis/Detail.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/Avis/AvisDetail.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/localService/northwind.svc/metadata.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/localService/Z_EAM_ORD_SRV/metadata.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/localService/Z_EAM_ORD2_SRV/metadata.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/localService/Z_EAM_NTF_SRV/metadata.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/localService/Z_EAM_NTF_CREATE_EXT_SRV_01/metadata.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/localService/EAM_OBJPG_TECHNICALOBJECT_SRV/metadata.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/localService/EAM_NTF_CREATE/metadata.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/localService/CV_ATTACHMENT_SRV/metadata.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/localService/API_WORK_CENTERS/metadata.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/Menu.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/view/Home.view.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/localService/metadata.xml"
+        },
+        {
+            "name": "../../maintenanceF5D/css/style.css"
+        },
+        {
+            "name": "../../maintenanceF5D/index.html"
+        },
+        {
+            "name": "../../maintenanceF5D/fioriHtmlRunner.html"
+        },
+        {
+            "name": "../../maintenanceF5D/extended_runnable_file.html"
+        }
+    ]
+}

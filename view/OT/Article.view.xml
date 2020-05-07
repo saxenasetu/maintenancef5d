@@ -1,0 +1,42 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="com.eramet.maintenanceF5D.controller.OT.Article" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page showHeader="false">
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+					<l:content>
+						<!-- In this case the Breadcrumbs hasn't got id, because we can use the i18n property name to set the currentLocationText-->
+						<Breadcrumbs currentLocationText="{i18n>articleText}" separatorStyle="GreaterThan" class="sapUiTinyMargin">
+							<Link press="backToFollowup" text="{i18n>followupLinkText2}" tooltip="{i18n>followupLinkText2}"/>
+							<Link press="onPressOTDetail" id="finalText" visible="false"/>
+							<Link press="backToOperations" text="{i18n>operationsTitle}"/>
+							<Link press="onPressNavBack" id="finalText2"/>
+						</Breadcrumbs>
+					</l:content>
+				</l:VerticalLayout>		
+		
+				<content>
+					<List backgroundDesign="Transparent" mode="MultiSelect" items="{path: 'articleModel>/'}">
+						<ObjectListItem 
+							title="{path: 'articleModel>Material'}" 
+							type="Active" 
+							number="{path: 'articleModel>RequirementQuantity'}" 
+							numberUnit="{path: 'articleModel>RequirementQuantityUnit'}"
+							numberState="{path: 'articleModel>RequirementQuantity',formatter:'com.eramet.maintenanceF5D.util.formatter.setNumber'}">
+							<attributes>
+								<ObjectAttribute text="{path: 'articleModel>MaterialText'}" />
+							</attributes>
+						</ObjectListItem>
+					</List>
+				</content>
+				<footer>
+					<Toolbar>
+						<Button id="search" icon="sap-icon://search" text="{i18n>articleInfoButton}" press="onPressNavToInfoStock" type="Ghost"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://save" type="Emphasized"/>
+					</Toolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

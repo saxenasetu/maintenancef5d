@@ -1,0 +1,60 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.eramet.maintenanceF5D.controller.Detail" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page id="detail" showNavButton="true" navButtonPress="onPressNavBack">
+				<OverflowToolbar class="toolbar">
+					<Button icon="sap-icon://home" type="Default" press="backToHome">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+
+					<Button type="Default" text="{i18n>avisLinkText}" tooltip="{i18n>avisLinkText}" press="onPressNavBack" enabled="false">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+				</OverflowToolbar>
+				<content>
+					<OverflowToolbar>
+						<Button icon="sap-icon://search" type="Emphasized" press="onOpenSearchDialog"/>
+						<Button id="date" text="{i18n>detailButton1}" press="onPressDate"/>
+						<Button id="critical" text="{i18n>detailButton2}" press="onPressCriticality"/>
+						<Button id="repercussion" text="{i18n>detailButton3}" press="onPressRepercussion"/>
+					</OverflowToolbar>
+					<List
+						id="detailList"
+						items="{path: 'listModel>/'}">
+						<items>
+							<ObjectListItem 
+								title="{path: 'listModel>title'}" 
+								type="Navigation" 
+								press="onPressNavToAvisDetail">
+								<firstStatus>
+									<ObjectStatus
+										text="{path: 'listModel>counter'}"
+										state="{
+											path: 'listModel>status',
+											formatter: 'com.eramet.maintenanceF5D.util.formatter.setStatus'
+										}" />
+								</firstStatus>
+								<attributes>
+									<ObjectAttribute text="{path: 'listModel>text'}" />
+									<ObjectAttribute text="{path: 'listModel>date'}" />
+									<ObjectAttribute text="{path: 'listModel>equipement'}" />
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://sys-add" />
+					</OverflowToolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

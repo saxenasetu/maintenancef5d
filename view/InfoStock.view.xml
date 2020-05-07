@@ -1,0 +1,76 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" 
+	controllerName="com.eramet.maintenanceF5D.controller.InfoStock" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>infoStockTitle}">
+				<content>
+					<OverflowToolbar class="toolbar">
+						<Button icon="sap-icon://home" type="Default" press="backToHome">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+			
+						<Button type="Default" text="{i18n>infoStockTitle}" tooltip="{i18n>infoStockTitle}" enabled="false">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+					</OverflowToolbar>
+					<Toolbar>
+						<SearchField
+							id="searchField"
+							enableSuggestions="true"
+							search="onSearch"
+							suggest="onSuggest"
+							placeholder="under construction"
+							suggestionItems="{ path: 'listModel>/'}">
+							<suggestionItems>
+								<SuggestionItem 
+									text="{path: 'listModel>title'}" 
+									description="{path: 'listModel>text'}, {path: 'listModel>date'}, {path: 'listModel>equipment'}, {path: 'listModel>status'}" 
+									key="{path: 'listModel>text'}"/>
+							</suggestionItems>
+						</SearchField>
+					</Toolbar>
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>
+							<Label text="{i18n>infoStockText1}"></Label>
+							<Input showValueHelp="true" placeholder="under construction" valueHelpRequest="onPressPostTech"/>
+							
+							<Label text="{i18n>infoStockText2}"></Label>
+							<Input showValueHelp="true" placeholder="under construction" valueHelpRequest="onPressPostTech"/>
+						</f:content>
+					</f:SimpleForm>
+					<List
+						id="detailList"
+						items="{path: 'infoStockModel>/'}">
+						<items>
+							<CustomListItem>
+								<VBox class="sapUiMediumMargin">
+									<Title text="{path: 'infoStockModel>title'}" class="sapUiTinyMarginTop"/>
+									<Label text="{path: 'infoStockModel>description'}" class="sapUiTinyMarginTop"/>
+									<Label text="{path: 'infoStockModel>magasin'}" class="sapUiTinyMarginTop"/>
+									<Label text="{path: 'infoStockModel>emplacement'}" class="sapUiTinyMarginTop"/>
+									<Label text="{i18n>infoStockQuantity}: {path: 'infoStockModel>quantity'}" class="sapUiTinyMarginTop"/>
+									<HBox>
+										<Label text="{i18n>infoStockReservation}" class="sapUiTinyMarginTop"/>
+										<StepInput value="{path: 'infoStockModel>quantity'}" change="onChange" width="20%" class="sapUiMediumMarginBegin" />
+									</HBox>
+						
+								</VBox>
+							</CustomListItem>
+						</items>
+					</List>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button text="{i18n>infoStockButton}" press="onOpenStockDialog"/>
+					</OverflowToolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

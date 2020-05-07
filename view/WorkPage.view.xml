@@ -1,0 +1,40 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="com.eramet.maintenanceF5D.controller.WorkPage" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>workTitle}" showNavButton="true" navButtonPress="backToHome">
+				<content>
+					<OverflowToolbar class="toolbar">
+						<Button icon="sap-icon://home" type="Default" press="backToHome">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+					<!--	<ToolbarSeparator>
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</ToolbarSeparator>	-->
+						<Button type="Default" text="{i18n>followupLinkText1}" tooltip="{i18n>followupLinkText1}" enabled="false">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+					</OverflowToolbar>
+					<HBox justifyContent="Center" alignItems="Center">	
+						<GenericTile header="{i18n>workFirstTile}" press="onPressNavToFollowup" class="sapUiSmallMargin">
+							<TileContent>
+								<ImageContent src="sap-icon://home-share"/>
+							</TileContent>
+						</GenericTile>
+						<GenericTile header="{i18n>workSecondTile}" press="onPressNavToHistoryOT" class="sapUiSmallMargin">
+							<TileContent>
+								<ImageContent src="sap-icon://home-share"/>
+							</TileContent>
+						</GenericTile>
+					</HBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

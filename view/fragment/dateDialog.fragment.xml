@@ -1,0 +1,16 @@
+<c:FragmentDefinition controllerName="com.eramet.maintenanceF5D.controller.Rattaches"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:u="sap.ui.unified">
+	<Dialog id="dateDialog" title="{i18n>dateDialogTitle}" contentWidth="100%" stretch="true">
+		<content>
+			<u:Calendar
+				id="calendar"
+				select="handleCalendarSelect"
+				intervalSelection="true"
+				formatOption="{ pattern: 'dd/MM/YYYY'}" />
+		</content>
+		
+		<buttons>
+			<Button id="close" text="{i18n>dateDialogButton}" press="onPressClose" type="Ghost"></Button>	
+		</buttons>
+	</Dialog>
+</c:FragmentDefinition>

@@ -1,0 +1,101 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="com.eramet.maintenanceF5D.controller.InfoEquipment" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>infoEquipmentTitle}">
+				<content>
+					<OverflowToolbar class="toolbar">
+						<Button icon="sap-icon://home" type="Default" press="backToHome">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+	
+						<Button type="Default" text="{i18n>infoEquipmentTitle}" tooltip="{i18n>infoEquipmentTitle}" enabled="false">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+					</OverflowToolbar>
+					<Toolbar>
+						<SearchField
+							id="searchField"
+							enableSuggestions="true"
+							search="onSearch"
+							suggest="onSuggest"
+							width="85%"
+							suggestionItems="{ path: 'infoEquipmentModel>/'}">
+							<suggestionItems>
+								<SuggestionItem 
+									text="{path: 'infoEquipmentModel>equipement'}" 
+									description="{path: 'infoEquipmentModel>title'} {path: 'infoEquipmentModel>equipment'}" 
+									key="{path: 'infoEquipmentModel>equipement'}"/>
+							</suggestionItems>
+						</SearchField>
+						<Button icon="sap-icon://bar-code" width="15%" press="onPressBarcode"/>
+					</Toolbar>
+					<f:SimpleForm id="equipmentInputs" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" visible="false">
+						<f:content>
+							<Label text="{i18n>infoEquipmentCategorie}"></Label>
+							<Input value="{path: 'equipmentViewModel>/category'}"/>
+							
+							<Label text="{i18n>infoEquipmentFamille}"></Label>
+							<Input value="{path: 'equipmentViewModel>/famille'}"/>
+							
+							<Label text="{i18n>infoEquipmentLocation}"></Label>
+							<Input value="{path: 'equipmentViewModel>/location'}"/>	
+							
+							<Label text="{i18n>infoEquipmentSecteur}"></Label>
+							<Input value="{path: 'equipmentViewModel>/sector'}"/>
+							
+							<Label text="{i18n>infoEquipmentCordinator}"></Label>
+							<Input value="{path: 'equipmentViewModel>/cordinator'}"/>
+							
+							<Label text="{i18n>infoEquipmentCritical}"></Label>
+							<Input value="{path: 'equipmentViewModel>/critical'}"/>
+							
+							<Label text="{i18n>infoEquipmentPostTech}"></Label>
+							<Input value="{path: 'equipmentViewModel>/postTech'}"/>
+							
+							<Label text="{i18n>infoEquipmentGarantie}"></Label>
+							<Input value="{path: 'equipmentViewModel>/garantie'}"/>
+							
+							<Label text="{i18n>infoEquipmentMesure}"></Label>
+							<Input value="{path: 'equipmentViewModel>/mesure'}"/>
+						</f:content>
+					</f:SimpleForm>	
+				</content>
+				<footer>
+					<Toolbar>
+						<Button 
+							id="avisRattache"
+							text="{i18n>infoEquipmentButton1}" 
+							tooltip="{i18n>infoEquipmentButton1}" 
+							width="25%"
+							enabled="false"
+							press="onPressNavToRattaches" />
+						<Button 
+							id="otRattache"
+							text="{i18n>infoEquipmentButton2}" 
+							tooltip="{i18n>infoEquipmentButton2}" 
+							width="25%"
+							enabled="false"
+							press="onPressNavToRattaches"/>
+						<Button 
+							id="nomenclature"
+							text="{i18n>infoEquipmentButton3}" 
+							tooltip="{i18n>infoEquipmentButton3}" 
+							width="25%" 
+							enabled="false"
+							press="onPressNavToInfoStock"/>
+						<Button 
+							icon="sap-icon://education" 
+							width="25%" 
+							press="onPressNavToDocumentTech"/>
+					</Toolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

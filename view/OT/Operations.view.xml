@@ -1,0 +1,123 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:grid="sap.f"
+	controllerName="com.eramet.maintenanceF5D.controller.OT.Operations" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page>
+				<customHeader>
+					<Toolbar>
+						<Button icon="sap-icon://nav-back" press="backToFollowup"/>
+						<!-- In this case the Breadcrumbs hasn't got id, because we can use the i18n property name to set the currentLocationText -->
+						<Breadcrumbs currentLocationText="{i18n>operationsTitle}" separatorStyle="GreaterThan" class="sapUiSmallMargin">
+							<Link press="backToFollowup" text="{i18n>followupLinkText2}" tooltip="{i18n>followupLinkText2}"/>
+							<Link press="onPressNavToOTDetail" id="finalText" visible="false"/>
+						</Breadcrumbs>
+					</Toolbar>
+				</customHeader>
+				<content>
+					<CustomListItem type="Active" class="sapUiSmallMarginBottom blueBackground">
+						<content>
+							<HBox>
+								<VBox width="100%">
+									<items>
+										<Title id="otNumber" level="H1" class="whiteLabel biggerSize sapUiSmallMarginBegin sapUiSmallMarginTop" />
+										<Text id="desc" class="whiteLabel sapUiSmallMarginBegin" />
+										<Text id="date" class="whiteLabel sapUiSmallMarginBegin sapUiSmallMarginBottom" />
+									</items>
+								</VBox>
+								<Button 
+									text="Details" 
+									icon="sap-icon://navigation-right-arrow" 
+									class="sapUiSmallMarginBegin sapUiSmallMarginTop sapUiSmallMarginEnd"
+									press="onPressNavToOTDetail"/>
+							</HBox>
+						</content>
+					</CustomListItem>
+					
+					<List id="tree" items="{path: 'treeModel>/'}">		
+						<CustomListItem>
+							<HBox >
+								<VBox width="90%">
+									<HBox>
+										<core:Icon src="{path: 'treeModel>src'}" />
+										<Text text="{path: 'treeModel>OperationNumber'} {path: 'treeModel>Description'}" wrapping="true" class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiSmallMarginEnd customOperationText"/>
+									</HBox>
+									<HBox>
+										<Button icon="sap-icon://synchronize" visible="{path: 'treeModel>visibleSub'}" press="onPressChangeIcon" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+									</HBox>
+								</VBox>
+						
+								<Button 
+									text="Details" 
+									icon="sap-icon://navigation-right-arrow" 
+									class="sapUiSmallMarginEnd sapUiSmallMarginTop"
+									press="onPressNavToOpDetail"
+									visible="{
+										path: 'treeModel>ControlKey',
+										formatter: 'com.eramet.maintenanceF5D.util.formatter.setOperationDetailButton'
+									}"/>
+							</HBox>
+						</CustomListItem>
+					</List>
+					
+					<CustomListItem id="list">
+						<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+							labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+							<f:content>
+								<Label labelFor="rondierStartDate" text="{i18n>toOpDetailDate1}" />
+								<DateTimePicker id="rondierStartDate"/>
+								
+								<Label labelFor="rondierEndDate" text="{i18n>toOpDetailDate2}"/>
+								<DateTimePicker id="rondierEndDate"/>
+								
+								<Label text="{i18n>toOpDetailIntervenant}"></Label>
+								<Input/>
+								
+								<Label text="{i18n>toOpDetailCompteRendu}"/>
+								<TextArea rows="4" growing="true"/>
+							</f:content>
+						</f:SimpleForm>
+					</CustomListItem>
+					
+					<List id="list2" items="{path: 'rondierModel>/'}">				
+						<CustomListItem>
+							<content>
+								<VBox>
+									<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTop">
+										<Label text="{path: 'rondierModel>OperationNumber'}" design="Bold"/>
+										<Label text="{path: 'rondierModel>OperationDesc'}" class="sapUiTinyMarginTop"/>
+									</VBox>
+									<VBox visible="{path: 'rondierModel>input'}" class="sapUiSmallMarginBegin">
+										<Label text="{path: 'rondierModel>MeasuringPointNumber'} {path: 'rondierModel>MeasuringPointDescription'}"/>
+										<HBox justifyContent="Center" alignItems="Center">
+											<Input placeholder="..." type="Number" class="sapUiTinyMargin" width="90px"></Input>
+											<Input enabled="false" value="{path: 'rondierModel>MeasuringPointUnit'}" class="sapUiTinyMargin" width="90px"></Input>
+										</HBox>
+									</VBox>	
+								<!--	<HBox visible="{path: 'rondierModel>buttons'}" justifyContent="Center" alignItems="Center">
+										<Button
+											id="conformButton"
+											class="sapUiTinyMargin"
+											text="{i18n>operationsButtonText1}"
+											press="onPressConform"/>
+										<Button 
+											id="nonConformButton"
+											class="sapUiTinyMargin"
+											text="{i18n>operationsButtonText2}"
+											press="onPressNonConform"/>
+									</HBox>-->
+								</VBox>
+							</content>
+						</CustomListItem>
+					</List>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button id="add" icon="sap-icon://add" press="onPressAdd" type="Default"/>
+						<Button id="save" icon="sap-icon://save" press="onPressSaveMeasurement" type="Emphasized"/>
+					</Toolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

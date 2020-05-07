@@ -1,0 +1,38 @@
+{
+	"items": [
+		{
+			"fileName": "Agenda.doc",
+			"mediaType": "application/msword",
+			"url": "demokit/sample/UploadCollection/LinkedDocuments/Business Plan Agenda.doc",
+			"uploadState": "Complete",
+			"attributes": [
+				{
+					"title": "Uploaded On",
+					"text": "2014-07-28",
+					"active": false
+				}
+			],
+			"markers": [
+				{
+					"type": "Flagged"
+				}
+			],
+			"statuses": [
+				{
+					"title": "Advanced",
+					"text": "Success",
+					"state": "Success",
+					"icon": "sap-icon://alert"
+				}
+			],
+			"selected": false
+		},
+		{
+			"fileName": "Picture of a woman.png",
+			"mimeType": "image/png",
+			"thumbnailUrl": "test-resources/sap/m/images/Woman_04.png",
+			"url": "test-resources/sap/m/images/Woman_04.png",
+			"uploadState": "Complete"
+		}
+	]
+}

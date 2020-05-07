@@ -1,0 +1,164 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout"
+	controllerName="com.eramet.maintenanceF5D.controller.OT.ToOpDetail" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page showHeader="false">
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+					<l:content>
+						<!-- The currentLocationText set manually by id, because it depens on the selected OT-OP number -->
+						<Breadcrumbs id="breadcrumbs" separatorStyle="GreaterThan" class="sapUiTinyMargin">
+							<Link press="backToFollowup" text="{i18n>followupLinkText2}" tooltip="{i18n>followupLinkText2}"/>
+							<Link press="onPressOTDetail" id="finalText" visible="true"/>
+							<Link press="backToOperations" text="{i18n>operationsTitle}"/>
+						</Breadcrumbs>
+					</l:content>
+				</l:VerticalLayout>
+		
+				<content>
+					<CustomListItem type="Active" class="sapUiSmallMarginBottom blueBackground">
+						<content>
+							<HBox>
+								<VBox width="100%">
+									<items>
+										<Title id="subOperations" level="H1" class="whiteLabel biggerSize sapUiSmallMarginBegin sapUiSmallMarginTop sapUiSmallMarginEnd" />
+									</items>
+								</VBox>
+								<Button 
+									text="Details" 
+									icon="sap-icon://navigation-right-arrow" 
+									class="sapUiSmallMarginBegin sapUiSmallMarginEnd"
+									press="onPressNavToOTDetail"/>
+							</HBox>
+						</content>
+					</CustomListItem>
+					
+					<List id="list" backgroundDesign="Transparent">
+						<CustomListItem id="customList">
+							<f:SimpleForm id="additionalBox" class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+								labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+								<f:content>
+									<Label text="{i18n>toOpDetailDate1}"/>
+									<DateTimePicker
+										id="startDate"
+										enabled="{path: 'opViewModel>/editable2'}"
+										value="{
+											path: 'opViewModel>/StartDate',
+											type: 'sap.ui.model.type.DateTime',
+											formatOptions: {
+												style: 'short'
+											}
+										}"/>
+									
+									<Label text="{i18n>toOpDetailDate2}"/>
+									<DateTimePicker 
+										id="endDate"
+										enabled="{path: 'opViewModel>/editable2'}"
+										value="{
+											path: 'opViewModel>/EndDate',
+											type: 'sap.ui.model.type.DateTime',
+											formatOptions: {
+												style: 'short'
+											}
+										}"/>
+										
+									<Label text="{i18n>toOpDetailIntervenant}"></Label>
+									<Input  
+										id="workCenter"
+										enabled="{path: 'opViewModel>/editable'}"
+										
+										type="Text" 
+										showSuggestion="true" 
+										suggest="onHandleSuggest"
+										suggestionItemSelected="onSuggSelected" 
+										liveChange="onDeleteKey" 
+										startSuggestion="3">
+										<customData>
+											<core:CustomData id="clientIdKey" key="" value=""/>
+										</customData>
+									</Input>
+								</f:content>
+							</f:SimpleForm>
+							<Bar>
+								<contentLeft/>
+								<contentMiddle/>
+								<contentRight>
+									<Button icon="sap-icon://sys-minus" press="onPressRemove"/>
+									<Button icon="sap-icon://sys-add" press="onPressAdd"/>
+								</contentRight>
+							</Bar>
+						</CustomListItem>
+					</List>
+		
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>
+							<Label text="{i18n>toOpDetailSousEquipment}"/>
+							<Input
+								enabled="{path: 'opViewModel>/editable2'}"
+								value="{path: 'opDetailModel>/SubEquipement'}"
+							/>
+							<!--<Select width="100%" forceSelection="false" enabled="{path: 'opViewModel>/editable'}">-->
+							<!--	<items>-->
+							<!--		<c:Item text="{i18n>toOpDetailSousEquipment1}" key="1"/>-->
+							<!--		<c:Item text="{i18n>toOpDetailSousEquipment2}" key="2"/>-->
+							<!--		<c:Item text="{i18n>toOpDetailSousEquipment3}" key="3"/>-->
+							<!--		<c:Item text="{i18n>toOpDetailSousEquipment4}" key="4"/>-->
+							<!--	</items>-->
+							<!--</Select>-->
+							
+						<!--	<Label text="{i18n>toOpDetailActivite}"/>
+							<Select width="100%" forceSelection="false" enabled="{path: 'opViewModel>/editable'}">
+								<items>
+									<c:Item text="{i18n>toOpDetailActivite1}" key="1"/>
+									<c:Item text="{i18n>toOpDetailActivite2}" key="2"/>
+									<c:Item text="{i18n>toOpDetailActivite3}" key="3"/>
+									<c:Item text="{i18n>toOpDetailActivite4}" key="4"/>
+								</items>
+							</Select>-->
+							<Label text="{i18n>toOpDetailPartieObjet}"/>
+							<Input
+								enabled="{path: 'opViewModel>/editable2'}"
+								value="{path: 'opDetailModel>/EffectedObjectGroup'} {path: 'opDetailModel>/EffectedObjectPart'} {path: 'opDetailModel>/EffectedObjectPartText'}"
+							/>
+							<!--<Select width="100%" forceSelection="false" enabled="{path: 'opViewModel>/editable'}">-->
+							<!--	<items>-->
+							<!--		<c:Item text="{i18n>toOpDetailPartieObjet1}" key="1"/>-->
+							<!--		<c:Item text="{i18n>toOpDetailPartieObjet2}" key="2"/>-->
+							<!--		<c:Item text="{i18n>toOpDetailPartieObjet3}" key="3"/>-->
+							<!--		<c:Item text="{i18n>toOpDetailPartieObjet4}" key="4"/>-->
+							<!--	</items>-->
+							<!--</Select>-->
+							
+							<Label text="{i18n>toOpDetailCause}"/>
+							<Input
+								enabled="{path: 'opViewModel>/editable2'}"
+								value="{path: 'opDetailModel>/CauseGroup'} {path: 'opDetailModel>/CauseCode'} {path: 'opDetailModel>/CauseCodeText'}"
+							/>
+							<!--<Select width="100%" forceSelection="false" enabled="{path: 'opViewModel>/editable'}">-->
+							<!--	<items>-->
+							<!--		<c:Item text="{i18n>toOpDetailCause1}" key="1"/>-->
+							<!--		<c:Item text="{i18n>toOpDetailCause2}" key="2"/>-->
+							<!--		<c:Item text="{i18n>toOpDetailCause3}" key="3"/>-->
+							<!--		<c:Item text="{i18n>toOpDetailCause4}" key="4"/>-->
+							<!--	</items>-->
+							<!--</Select>-->
+							<Label text="{i18n>toOpDetailCompteRendu}"/>
+							<TextArea rows="4" growing="true" enabled="{path: 'opViewModel>/editable'}"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+				<footer>
+					<Toolbar>
+						<Button text="{i18n>toOpDetailArticle}" type="Emphasized" press="onPressArticle"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://camera" press="onPressCamera" type="Ghost" width="22%"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://attachment" press="onPressFileBrowser" type="Ghost" width="22%"/>
+						<ToolbarSpacer/>
+						<Button icon="{path: 'opViewModel>/icon'}" press="onPressEdit" type="Ghost" width="30%"/>
+					</Toolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

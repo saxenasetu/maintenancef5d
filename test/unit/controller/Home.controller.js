@@ -1,0 +1,1 @@
+sap.ui.define(["com/eramet/maintenanceF5D/controller/Home.controller"],function(e){"use strict";QUnit.module("Home Controller");QUnit.test("I should test the Home controller",function(o){var t=new e;t.onInit();o.ok(t)})});

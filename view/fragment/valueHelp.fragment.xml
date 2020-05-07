@@ -1,0 +1,58 @@
+<c:FragmentDefinition controllerName="com.eramet.maintenanceF5D.controller.InfoStock" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog id="valueHelpDialog" title="{i18n>valueHelpTitle}" contentWidth="100%" stretch="true">
+		<content>
+			<List backgroundDesign="Transparent" id="list">
+				<CustomListItem id="customList">
+					<f:SimpleForm id="additionalBox" class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" labelSpanL="3"
+						labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2">
+						<f:content>
+							<Label text="{i18n>valueHelpText1}"></Label>
+							<Select forceSelection="false">
+								<items>
+									<c:Item text="{i18n>valueHelpType1}" key="1"/>
+									<c:Item text="{i18n>valueHelpType2}" key="2"/>
+									<c:Item text="{i18n>valueHelpType3}" key="3"/>
+									<c:Item text="{i18n>valueHelpType4}" key="4"/>
+									<c:Item text="{i18n>valueHelpType5}" key="5"/>
+									<c:Item text="{i18n>valueHelpType6}" key="6"/>
+								</items>
+							</Select>
+							<Label text="{i18n>valueHelpText2}"></Label>
+							<Select forceSelection="false">
+								<items>
+									<c:Item text="{i18n>valueHelpFilter1}" key="1"/>
+									<c:Item text="{i18n>valueHelpFilter2}" key="2"/>
+									<c:Item text="{i18n>valueHelpFilter3}" key="3"/>
+									<c:Item text="{i18n>valueHelpFilter4}" key="4"/>
+									<c:Item text="{i18n>valueHelpFilter5}" key="5"/>
+									<c:Item text="{i18n>valueHelpFilter6}" key="6"/>
+									<c:Item text="{i18n>valueHelpFilter7}" key="7"/>
+									<c:Item text="{i18n>valueHelpFilter8}" key="8"/>
+									<c:Item text="{i18n>valueHelpFilter9}" key="9"/>
+									<c:Item text="{i18n>valueHelpFilter10}" key="10"/>
+									<c:Item text="{i18n>valueHelpFilter11}" key="11"/>
+									<c:Item text="{i18n>valueHelpFilter12}" key="12"/>
+									<c:Item text="{i18n>valueHelpFilter13}" key="13"/>
+									<c:Item text="{i18n>valueHelpFilter14}" key="14"/>
+								</items>
+							</Select>
+							<Label text="{i18n>valueHelpText3}"></Label>
+							<Input />
+						</f:content>
+					</f:SimpleForm>
+				</CustomListItem>
+			</List>
+			<Bar>
+				<contentLeft/>
+				<contentMiddle/>
+				<contentRight>
+					<Button icon="sap-icon://sys-add" press="onPressAdd"/>
+				</contentRight>
+			</Bar>
+		</content>
+		<buttons>
+			<Button text="{i18n>valueHelpButton}" tooltip="{i18n>valueHelpButton}" press="onPressCloseVH" type="Ghost"></Button>
+		</buttons>
+	</Dialog>
+</c:FragmentDefinition>

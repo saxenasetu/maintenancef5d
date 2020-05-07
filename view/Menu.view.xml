@@ -1,0 +1,67 @@
+<mvc:View 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:tnt="sap.tnt" 
+	xmlns:u="sap.ui.unified" 
+	controllerName="com.eramet.maintenanceF5D.controller.Menu" 
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	class="side-navigation-demo">
+	<tnt:ToolPage id="toolPage">
+		<tnt:header>
+			<tnt:ToolHeader>
+				<Bar>
+					<contentLeft>
+						<Button
+							icon="sap-icon://menu2"
+							press="onCollapseExpandPress">
+						</Button>
+						<Button
+							id="homeButton"
+							icon="sap-icon://home"
+							type="Transparent"
+							visible="{path: 'headerModel>/visible'}"
+							press="backToHome">
+						</Button>
+					</contentLeft>
+					<contentMiddle>
+						<Title id="mainTitle" text="{path: 'menuTitleModel>/title'}"></Title>
+					</contentMiddle>
+					<contentRight>
+						<Button id="customer" icon="sap-icon://customer" type="Transparent" press="onOpenCustomerDialog" />
+					</contentRight>
+				</Bar>	
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:mainContents>
+			<!--<tnt:SideNavigation id="sideNavigation" expanded="false" visible="false">-->
+			<tnt:SideNavigation id="sideNavigation" expanded="false" visible="false">
+				<tnt:NavigationList>
+					<tnt:NavigationListItem id="connected" text="{i18n>burgerMenuConnect}" icon="sap-icon://connected">
+					</tnt:NavigationListItem>
+					
+					<tnt:NavigationListItem id="deconnected" text="{i18n>burgerMenuDeconnect}" icon="sap-icon://disconnected">
+					</tnt:NavigationListItem>
+					
+					<tnt:NavigationListItem text="{i18n>burgerMenuWorkCenter}" icon="sap-icon://meeting-room">
+					</tnt:NavigationListItem>
+					
+					<tnt:NavigationListItem text="{i18n>burgerMenuWorkSociety}" icon="sap-icon://family-care">
+					</tnt:NavigationListItem>
+					
+					<tnt:NavigationListItem text="{i18n>burgerMenuNotificationAlert}" icon="sap-icon://message-warning">
+					</tnt:NavigationListItem>
+					
+					<tnt:NavigationListItem text="{i18n>burgerMenuSync}" icon="sap-icon://synchronize" >
+						<tnt:NavigationListItem text="Upload" icon="sap-icon://up" select="onPressFlush"/>
+						<tnt:NavigationListItem text="Download" icon="sap-icon://down" select="onPressRefresh"/>
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+			<Page showHeader="false" id="mainContent">
+				<NavContainer id="app"/>
+			</Page>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

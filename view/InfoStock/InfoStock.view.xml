@@ -1,0 +1,81 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" 
+	controllerName="com.eramet.maintenanceF5D.controller.InfoStock.InfoStock" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page showHeader="false">
+				<content>
+					<Toolbar class="sapUiSmallMarginTop">
+						<SearchField
+							id="searchField"
+							enableSuggestions="true"
+							search="onSearch"
+							suggest="onSuggest"
+							placeholder="under construction"
+							suggestionItems="{ path: 'listModel>/'}">
+							<suggestionItems>
+								<SuggestionItem 
+									text="{path: 'listModel>title'}" 
+									description="{path: 'listModel>text'}, {path: 'listModel>date'}, {path: 'listModel>equipment'}, {path: 'listModel>status'}" 
+									key="{path: 'listModel>text'}"/>
+							</suggestionItems>
+						</SearchField>
+					</Toolbar>
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>
+							<Label text="{i18n>infoStockText1}"></Label>
+							<Input showValueHelp="true" placeholder="under construction" valueHelpRequest="onPressPostTech"/>
+							
+							<Label text="{i18n>infoStockText2}"></Label>
+							<Input showValueHelp="true" placeholder="under construction" valueHelpRequest="onPressPostTech"/>
+						</f:content>
+					</f:SimpleForm>
+					<List
+						id="detailList"
+						items="{path: 'infoStockModel>/'}">
+						<items>
+							<CustomListItem>
+								<VBox class="sapUiSmallMargin">
+									<Title text="{path: 'infoStockModel>title'}" class="sapUiTinyMarginBegin sapUiTinyMarginTop" titleStyle="H3"/>
+									<FlexBox
+										class="sapUiTinyMarginBegin"
+										alignItems="Start"
+										justifyContent="SpaceBetween">
+										<items>
+											<Label text="{path: 'infoStockModel>description'}" class="sapUiTinyMarginTop"/>
+											<Label text="{path: 'infoStockModel>magasin'}" class="sapUiTinyMarginTop"/>
+										</items>
+									</FlexBox>
+									
+									<FlexBox
+										class="sapUiTinyMarginBegin"
+										alignItems="Start"
+										justifyContent="SpaceBetween">
+										<items>
+											<Label text="{path: 'infoStockModel>emplacement'}" class="sapUiTinyMarginTop"/>
+											<Label text="{i18n>infoStockQuantity}: {path: 'infoStockModel>quantity'}" class="sapUiTinyMarginTop"/>
+										</items>
+									</FlexBox>
+							
+									<Label text="{i18n>infoStockReservation}" class="sapUiTinyMarginBegin sapUiTinyMarginTop"/>
+									
+									<HBox justifyContent="Center" alignItems="Center">
+										<Button icon="sap-icon://less" press="onPressDec" class="stepButton sapUiSmallMarginBegin redButton blackText"/>
+										<Input value ="0" type="Number" class="stepInput customInputText sapUiSmallMarginTop" liveChange="onCheckValue"/>
+										<Button icon="sap-icon://add" press="onPressInc" class="stepButton greenButton blackText"/>
+									</HBox>
+								</VBox>
+							</CustomListItem>
+						</items>
+					</List>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button text="{i18n>infoStockButton}" press="onOpenStockDialog" type="Ghost"/>
+					</Toolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

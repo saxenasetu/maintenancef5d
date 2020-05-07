@@ -1,0 +1,13 @@
+<c:FragmentDefinition controllerName="com.eramet.maintenanceF5D.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m"
+	xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout.form" 	xmlns:f="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<Dialog id="refusalDialog" title="{i18n>refusalDialogTitle}" contentWidth="auto">
+		<content>
+			<TextArea id="deleteComment" rows="10" placeholder="{i18n>refusalDialogPlaceholder}" width="100%"/>
+		</content>
+		<buttons>
+			<Button text="{i18n>refusalDialogButton1}" tooltip="{i18n>refusalDialogButton1}" press="onPressDelete" type="Emphasized"></Button>
+			<Button text="{i18n>refusalDialogButton2}" tooltip="{i18n>refusalDialogButton2}" press="onPressClose" type="Ghost"></Button>	
+		</buttons>
+	</Dialog>
+</c:FragmentDefinition>

@@ -1,0 +1,77 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" 
+	controllerName="com.eramet.maintenanceF5D.controller.Rattaches" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page id="rattaches">
+				<content>
+					<OverflowToolbar class="toolbar"> 
+						<Button icon="sap-icon://home" type="Default" press="backToHome">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+	
+						<Button type="Default" text="{i18n>infoEquipmentTitle}" tooltip="{i18n>infoEquipmentTitle}" press="onPressNavBack">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>	
+
+						<Button type="Default" id="actualPosition" enabled="false">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>	
+					</OverflowToolbar>
+					<Toolbar>
+						<Button id="dateSelector" press="onPressDateInterval"/>
+						<Select id="status" width="100%" forceSelection="false" change="onSelectItem">
+							<items>
+								<c:Item text="{i18n>rattachesSelect1}" key="1"/>
+								<c:Item text="{i18n>rattachesSelect2}" key="2"/>
+								<c:Item text="{i18n>rattachesSelect3}" key="3"/>
+								<c:Item text="{i18n>rattachesSelect4}" key="4"/>
+							</items>
+						</Select>
+						<Select id="type" width="100%" forceSelection="false" change="onSelectItem">
+							<items>
+								<c:Item text="{i18n>rattachesTypeSelect1}" key="1"/>
+								<c:Item text="{i18n>rattachesTypeSelect2}" key="2"/>
+								<c:Item text="{i18n>rattachesTypeSelect3}" key="3"/>
+								<c:Item text="{i18n>rattachesTypeSelect4}" key="4"/>
+								<c:Item text="{i18n>rattachesTypeSelect5}" key="5"/>
+							</items>
+						</Select>
+						<Button icon="sap-icon://clear-filter" press="onPressClearFilter"/>
+					</Toolbar>
+					<List
+						id="detailList"
+						items="{path: 'avisRattachesModel>/'}">
+						<items>
+							<ObjectListItem 
+								title="{path: 'avisRattachesModel>title'}" 
+								type="Active" 
+								press="onPressNavToAvisDetail">
+								<firstStatus>
+									<ObjectStatus icon="{path: 'avisRattachesModel>icon'}"/>
+								</firstStatus>
+								<attributes>
+									<ObjectAttribute text="{path: 'avisRattachesModel>text'}" />
+									<ObjectAttribute text="{path: 'avisRattachesModel>date'}" />
+									<ObjectAttribute text="{path: 'avisRattachesModel>status'}" />
+									<ObjectAttribute text="{path: 'avisRattachesModel>type'}" />
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://sys-add" id="addButton"/>
+					</OverflowToolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,78 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.eramet.maintenanceF5D.controller.Article" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>articleTitle}" showNavButton="true" navButtonPress="onPressNavBack">
+				<OverflowToolbar width="100%" class="toolbar">
+					<Button icon="sap-icon://home" type="Default" press="backToHome">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+	
+					<Button type="Default" text="{i18n>followupLinkText1}" tooltip="{i18n>followupLinkText1}" press="backToWorkPage">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+
+					<Button type="Default" text="{i18n>followupLinkText2}" tooltip="{i18n>followupLinkText2}" press="backToFollowup">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+	
+					<Button id="finalText" type="Default" press="onPressOTDetail">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="Low"/>
+						</layoutData>
+					</Button>
+
+					<Button text="{i18n>operationsTitle}" tooltip="{i18n>operationsTitle}" press="backToOperations"  type="Default">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="Low"/>
+						</layoutData>
+					</Button>
+
+					<Button id="finalText2" type="Default" press="onPressNavBack">
+						<layoutData>
+							<OverflowToolbarLayoutData shrinkable="true" priority="Low"/>
+						</layoutData>
+					</Button>
+
+					<Button text="{i18n>articleText}" tooltip="{i18n>articleText}" type="Default" enabled="false">
+						<layoutData>
+							<OverflowToolbarLayoutData shrinkable="true" priority="Low"/>
+						</layoutData>
+					</Button>
+				</OverflowToolbar>
+				<content>
+					<List backgroundDesign="Transparent" mode="MultiSelect">
+						<ObjectListItem title="Code article 1" number="3">
+							<attributes>
+								<ObjectAttribute text="Description 1" />
+							</attributes>
+						</ObjectListItem>
+						<ObjectListItem title="Code article 2" number="12">
+							<attributes>
+								<ObjectAttribute text="Description 2" />
+							</attributes>
+						</ObjectListItem>
+						<ObjectListItem title="Code article 3" number="5">
+							<attributes>
+								<ObjectAttribute text="Description 3" />
+							</attributes>
+						</ObjectListItem>
+					</List>
+				</content>
+				<footer>
+					<Toolbar>
+						<Button id="search" icon="sap-icon://search" text="{i18n>articleInfoButton}" press="onPressNavToInfoStock"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://save" type="Emphasized"/>
+					</Toolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

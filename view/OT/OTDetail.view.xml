@@ -1,0 +1,103 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="com.eramet.maintenanceF5D.controller.OT.OTDetail" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page>
+				<customHeader>
+					<Toolbar>
+						<Button icon="sap-icon://nav-back" press="onPressNavToOperations"/>
+						<!-- The currentLocationText set manually by id, because it depens on the selected OT number -->
+						<Breadcrumbs id="breadcrumbs" separatorStyle="GreaterThan" class="sapUiSmallMargin">
+							<Link press="onPressNavBack" text="{i18n>followupLinkText2}" tooltip="{i18n>followupLinkText2}"/>
+						</Breadcrumbs>
+					</Toolbar>
+				</customHeader>
+				<content> 
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>
+							<Label text="{i18n>otDetailText1}"></Label>
+							<Input 
+								editable="false"
+								value="{path: 'otDetailModel>/LongText'}"/>
+						</f:content>
+					</f:SimpleForm>	
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" title="{i18n>otDetailSubtitle}">
+						<f:content>
+							<Label text="{i18n>otDetailText2}"></Label>
+							<Input 
+								id="functionalLocation"
+								editable="{path: 'otViewModel>/editable'}"
+								value="{path: 'otDetailModel>/FunctionalLocation'}"/>
+							<Label text="{i18n>otDetailText3}"></Label>
+							<Input 
+								editable="false"
+								value="{path: 'otDetailModel>/ShortText'}"/>
+						</f:content>	
+					</f:SimpleForm>	
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>	
+							<Label text="{i18n>otDetailText4}"></Label>
+							<Input 
+								editable="false"
+								value="{path: 'otDetailModel>/PlantSection'}"/>
+							
+							<Label text="{i18n>otDetailText5}"></Label>
+							<Input 
+								editable="false"
+								value="{
+									path: 'otDetailModel>/StartDate',
+									type: 'sap.ui.model.type.DateTime',
+									formatOptions: {
+										style: 'short'
+									}
+								}" />
+							
+							<Label text="{i18n>otDetailText6}"></Label>
+							<Input 
+								editable="false"
+								value="{path: 'otDetailModel>/Priority'}"/>
+							
+							<Label text="{i18n>otDetailText7}"></Label>
+							<Input 
+								editable="false"
+								value="{path: 'otDetailModel>/SystemStatus'}"/>
+							
+							<Label text="{i18n>otDetailText8}"></Label>
+							<Input 
+								editable="false"
+								value="{path: 'otDetailModel>/MainWorkCenter'}"/>
+							
+							<Label text="{i18n>otDetailText9}"></Label>
+							<Input 
+								editable="false"
+								value="{path: 'otDetailModel>/Revision'}"/>
+							
+							<Label text="{i18n>otDetailText10}"></Label>
+							<DateTimePicker 
+								id="finishDate"
+								editable="{path: 'otViewModel>/editable'}"
+								displayFormat="short"
+								value="{
+									path: 'otDetailModel>/FinishDate'
+								}"/>
+							
+							<Label text="{i18n>otDetailText11}"></Label>
+							<Input 
+								editable="false"
+								value="{path: 'otDetailModel>/Localisation'}"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="{path: 'otViewModel>/icon'}" press="onPressEdit" type="Emphasized"/>
+					</Toolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

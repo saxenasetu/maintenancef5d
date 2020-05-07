@@ -1,0 +1,64 @@
+<c:FragmentDefinition controllerName="com.eramet.maintenanceF5D.controller.AvisDetail"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" xmlns:upload="sap.m.upload" 
+	xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout.form" 	xmlns:f="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<Dialog id="avisUploadDialog" title="{i18n>uploadDialogTitle}" contentWidth="100%" stretch="true">
+		<content>
+			<upload:UploadSet
+				id="avisUploadSet"
+				instantUpload="true"
+				showIcons="false"
+				uploadEnabled="true"
+				terminationEnabled="true"
+				fileTypes="txt,doc,png,jpg"
+				maxFileNameLength="30"
+				maxFileSize="200"
+				mediaTypes="text/plain,application/msword,image/jpeg"
+				uploadComplete="onUploadComplete"
+				uploadUrl="/sap/opu/odata/sap/CV_ATTACHMENT_SRV/OriginalContentSet"
+				items="{path: '/items', templateShareable: false}">
+				<upload:toolbar>
+					<OverflowToolbar>
+						<Button
+								id="uploadSelectedButton"
+								text="Upload selected"
+								press="onUploadSelectedButton"/>
+						<Button
+								id="downloadSelectedButton"
+								text="Download selected"
+								press="onDownloadSelectedButton"/>
+					</OverflowToolbar>
+				</upload:toolbar>
+				<upload:items>
+					<upload:UploadSetItem
+							fileName="{fileName}"
+							url="{url}"
+							attributes="{path: 'attributes', templateShareable: false}"
+							uploadState="{path: 'uploadState'}">
+						<upload:attributes>
+							<ObjectAttribute
+									title="{title}"
+								/>
+						</upload:attributes>
+						<!--<upload:markers>-->
+						<!--	<ObjectMarker-->
+						<!--			type="{type}"-->
+						<!--			visibility="{visibility}"/>-->
+						<!--</upload:markers>-->
+						<!--<upload:statuses>-->
+						<!--	<ObjectStatus-->
+						<!--			title="{title}"-->
+						<!--			text="{text}"-->
+						<!--			state="{state}"-->
+						<!--			icon="{icon}"-->
+						<!--			active="{active}"/>-->
+						<!--</upload:statuses>-->
+					</upload:UploadSetItem>
+				</upload:items>
+			</upload:UploadSet>
+		</content>
+		
+		<buttons>
+			<Button text="{i18n>uploadDialogButton}" press="onPressCloseAvisUploader" type="Ghost"></Button>
+		</buttons>
+	</Dialog>
+</c:FragmentDefinition>

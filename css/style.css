@@ -1,0 +1,317 @@
+/*	Background color for the Breadcrumbs in the navigation header */
+.toolbar {
+/*	background: rgb(209, 203, 203); */ 
+	background: #80808029;
+}
+
+/* Background color for the Dépanner tile in the customer selector popup */
+.purple {
+	background: rgb(203, 174, 230) !important;
+	z-index: 2;
+} 
+
+/* Background color for the Technicien de maintenance tile in the customer selector popup */
+.blue {
+	background: rgb(194, 223, 232) !important;
+}
+
+/* Background color for the Rondier tile in the customer selector popup */
+.green {
+	background: rgb(155, 226, 155) !important;
+}
+
+/* For the title background in the Operation.view and in the ToOpDetail.view */
+.blueBackground {
+	background: rgb(8, 84, 160) !important;
+}
+
+/* This is increasing the size of the title in the Operation.view and in the ToOpDetail.view */
+.biggerSize {
+	font-size: 1.25rem;
+}
+
+/* This is setting the white text of the title in the Operation.view and in the ToOpDetail.view */
+.whiteLabel {
+	color: rgb(255, 255, 255);
+}
+
+/* This is setting the label color from grey to black in the full application */
+.sapMLabel {
+    color: rgb(50, 54, 58);
+    font-size: 0.875rem;
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+/* This is setting the icon color to white after click in the TreeList in the Operation.view */
+:not(.sapMBtnDisabled):not(.sapMSBActive)>span.sapMBtnInner.sapMBtnAccept:not(.sapMBtnActive):not(.sapMToggleBtnPressed)>.sapMBtnIcon {
+    color: rgb(255, 255, 255);
+}
+
+/* This is overwriting the icon of the Accept button in the full application */
+span.sapMBtnInner.sapMBtnAccept {
+    background-image: none;
+    background-color: rgb(76, 175, 80);
+    border-color: rgb(16, 126, 62);
+    color: rgb(158, 158, 158);
+}
+
+/* This is overwriting the default TreeItems in the full application */
+.sapMTreeItemBase {
+    min-height: 2.25rem;
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    font-size: 1.5rem;
+    padding-left: 0;
+    color: rgb(50, 54, 58);
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+}
+
+/* This is overwriting the Accept button in the full application */
+span.sapMBtnInner.sapMBtnAccept {
+    background-image: none;
+    background-color: rgb(76, 175, 80);
+    border-color: rgb(16, 126, 62);
+    color: rgb(255, 255, 255);
+}
+
+/* This is overwriting the Reject button in the full application */
+span.sapMBtnInner.sapMBtnReject {
+    background-image: none;
+    background-color: rgb(187,0,0);
+    border-color: rgb(187,0,0);
+    color: white;
+}
+
+/* For the Breadcrumbs collapse */ 
+.sapMLnk {
+    color: rgb(10,110,209);
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    font-size: 0.90rem;
+    cursor: pointer;
+}
+
+/* This is a custom css for the input fields (between the +- buttons) in the InfoStock.view */
+.stepInput {
+    color: rgb(50,54,58);
+    text-align: center !important;
+}
+
+/* This is a custom css for the buttons (+- buttons) in the InfoStock.view */
+.stepButton {
+	width: 6rem;
+    font-size: 1.5rem;
+    line-height: 3.125rem;
+    height: 2rem;
+}
+
+/* This is setting the align to center in the stepInput field in the InfoStock.view */
+.sapMInputBaseInner {
+    color: rgb(50,54,58);
+    text-align: inherit;
+} 
+
+/* This will setting the icon color of the filter button to white in the Folloup.view */
+:not(.sapMBtnDisabled):not(.sapMSBActive)>span.sapMBtnInner.sapMBtnReject:not(.sapMBtnActive):not(.sapMToggleBtnPressed)>.sapMBtnIcon {
+    color: rgb(255,255,255);
+}
+
+/* Custom Detail button in Operations.view */
+.customDetailBtn {
+	padding-left: 55px !important;
+}
+
+.customOperationText{
+	font-size: 1.15rem;
+}
+
+/* Custom Slider ticker label in Filter.view */
+.sapMSliderTickLabel .sapMSliderLabel {
+    padding-top: 0.4375rem;
+    height: 1rem;
+    width: 3.5rem;
+    left: -1.5rem;
+    font-size: 0.75rem;
+    color: rgb(106,109,112);
+}
+
+/* Custom red button in the InfoStock.view */
+.redButton >span.sapMBtnInner{
+    background-image: none;
+    background-color: rgb(254, 81, 81);
+    border: 0.0625rem solid rgb(172, 177, 183);
+    border-color: rgb(16, 126, 62);
+    color: rgb(0, 0, 0);
+}
+
+/* Custom green button in the InfoStock.view */
+.greenButton >span.sapMBtnInner{
+    background-image: none;
+    background-color: rgb(76, 175, 80);
+    border: 0.0625rem solid rgb(172, 177, 183);
+    border-color: rgb(16, 126, 62);
+    color: rgb(0, 0, 0);
+}
+
+/* Custom button text color in the InfoStockView */
+.blackText .sapUiIcon::before {
+    content: attr(data-sap-ui-icon-content);
+    speak: none;
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    color: black;
+    font-size: x-large;
+} 
+
+/* Custom bigger input text in the InfoStock.view */
+.customInputText .sapMInputBaseInner{
+	color: rgb(50,54,58);
+    text-align: inherit;
+    font-size: x-large;
+}
+
+/* Custom bigger and green input text in the InfoStock.view */
+.customInputTextGreen .sapMInputBaseInner{
+	color: rgb(255, 255, 255);
+    text-align: inherit;
+    font-size: x-large;
+    background-color: rgb(76, 175, 80);
+}
+
+/* Custom button for the popover in the InfoEquipment.view */
+.customPopoverBtn .sapMBtnInner .sapMBtn {
+	font-size: 0.875rem;
+    height: 3.2rem;
+    min-width: 2.25rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    border-radius: 0.25rem;
+    text-shadow: none;
+}
+
+/* Custom height for the breadcrumbs in the ToOpDetail.view and Article.view */
+.sapUiVlt.sapUiContentPadding {
+    padding: 0.25rem !important;
+    box-sizing: border-box;
+    background: white !important;
+}
+
+/* Custom css for the Menu */
+.sapTntSideNavigation {
+	position: fixed;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	z-index: 1 !important;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	max-width: 15rem;
+	-webkit-box-direction: normal;
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+/* This is the ABC Indicator for the Avis list in the Detail.view*/
+.ABCIndicator .sapMFlexItemAlignAuto {
+    align-self: center !important;
+}
+
+/* This is the most critical cell in the AvisDetail.view */
+.darkrRedCell {
+	display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    /* background: rgb(243, 211, 211); */
+    /* border-color: rgb(242, 145, 145) !important; */
+    /* border-top: 4.5px solid rgb(242, 145, 145); */
+    /* border-right: 15.5px solid rgb(242, 145, 145); */
+    background: rgb(177, 22, 22);
+    color: white !important;
+}
+
+/* This is the most critical cell in the AvisDetail.view */
+.redCell {
+	display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    /* background: rgb(243, 211, 211); */
+    /* border-color: rgb(242, 145, 145) !important; */
+    /* border-top: 4.5px solid rgb(242, 145, 145); */
+    /* border-right: 15.5px solid rgb(242, 145, 145); */
+    background: rgb(250, 82, 124);
+    color: white !important;
+}
+
+/* This is the medium criticality cell in the AvisDetail.view */
+.orangeCell {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    /* background: rgb(255, 224, 179); */
+    /* border-color: rgba(255, 193, 7, 0.77) !important; */
+    /* border-top: 4.5px solid rgba(255, 193, 7, 0.77); */
+    /* border-right: 16.5px solid rgba(255, 193, 7, 0.77); */
+    background: rgba(244, 141, 6);
+    color: white !important;
+}
+
+/* This is the lowest critical cell in the AvisDetail.view */
+.yellowCell {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    /* background: rgb(215, 242, 183); */
+    /* border-color: rgba(164, 255, 56, 0.98) !important; */
+    /* border-top: 4.5px solid rgba(164, 255, 56, 0.98); */
+    /* border-right: 15.5px solid rgba(164, 255, 56, 0.98); */
+    background: rgba(251, 241, 50);
+    color: white !important;
+}
+/*  This is the custom header in the Operation.view */
+.blueBackground .sapMLIBHoverable:hover {
+    background: rgb(8, 84, 160) !important;
+}
+
+/*
+.side-navigation-demo {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+
+	-webkit-box-direction: normal;
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+
+	max-width: 15rem;
+}*/

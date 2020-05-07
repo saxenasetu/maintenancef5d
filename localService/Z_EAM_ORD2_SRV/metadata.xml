@@ -1,0 +1,107 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="Z_EAM_ORD2_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="OrderHeader" sap:content-version="1">
+				<Key><PropertyRef Name="OrderId"/></Key><Property Name="OrderId" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Order" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OrderTypeText" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Short Text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Planningplant" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Planning Plant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PlanplantTxt" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name 1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FinishDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Basic fin. date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MainWorkCenter" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Main WorkCtr"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StartDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Bas. start date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MainWorkCenterText" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OrderType" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Order Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PlantSection" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Plant Section"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Revision" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Revision" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PlantSectionText" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="PersResp. PlntS"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunctionalLocation" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Functional loc." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Location" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Location" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Priority" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Priority" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LongText" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LONG_TEXT" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SystemStatus" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="System Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ShortText" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NotificationNumber" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Notification" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="HeaderToOperations" Relationship="Z_EAM_ORD2_SRV.OrderHeaderToOperations"
+					FromRole="FromRole_OrderHeaderToOperations" ToRole="ToRole_OrderHeaderToOperations"/></EntityType>
+			<EntityType Name="OrderOperation" sap:content-version="1">
+				<Key><PropertyRef Name="OrderNumber"/><PropertyRef Name="OperationNumber"/></Key><Property Name="OrderNumber" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Order" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OperationNumber" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Activity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Opr. short text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="OperationComponent" Relationship="Z_EAM_ORD2_SRV.OperationToComponent" FromRole="FromRole_OperationToComponent"
+					ToRole="ToRole_OperationToComponent"/><NavigationProperty Name="MeausurementPoint" Relationship="Z_EAM_ORD2_SRV.OperationToMeasurementPoint"
+					FromRole="FromRole_OperationToMeasurementPoint" ToRole="ToRole_OperationToMeasurementPoint"/></EntityType>
+			<EntityType Name="RevisionHelp" sap:content-version="1">
+				<Key><PropertyRef Name="Iwerk"/><PropertyRef Name="Revnr"/></Key><Property Name="Iwerk" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Planning Plant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Revnr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Revision" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Revtx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="RevDescription"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Revbd" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Start date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Reved" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="End date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="OperationComponent" sap:content-version="1">
+				<Key><PropertyRef Name="OrderNumber"/><PropertyRef Name="OperationNumber"/></Key><Property Name="OrderNumber" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Order" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="OperationNumber" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Activity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="SubOperation" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Suboperation"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Reservation" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Reservation"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ReservationItem" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Item no."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RecordType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Record type"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OriginalQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false"
+					sap:label="Input Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MaterialText" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RequirementQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false"
+					sap:label="Requirement qty" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RequirementQuantityUnit" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Base Unit"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="RequirementQuantityUnitIso" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="ISO code"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OriginalUnit" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Base Unit"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="OriginalUnitIso" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="ISO code"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="MeasurementPoint" sap:content-version="1">
+				<Key><PropertyRef Name="OrderNumber"/><PropertyRef Name="OperationNumber"/></Key><Property Name="OrderNumber" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Order" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OperationNumber" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Activity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasuringPoint" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Measuring point"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ObectNumber" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="OBjNo.MeasPObj."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasurementPointCategory" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="MeasPtCategory"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="InternalCharacteristic" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Internal char."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Exponent" Type="Edm.Int16" Nullable="false" sap:unicode="false" sap:label="FloatPointExp." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Decimal" Type="Edm.Int16" Nullable="false" sap:unicode="false" sap:label="Decimal places" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TargetValue" Type="Edm.Double" Nullable="false" sap:unicode="false" sap:label="Target value" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ShortText" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LowLimint" Type="Edm.Double" Nullable="false" sap:unicode="false" sap:label="LoMRLimit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HighLimit" Type="Edm.Double" Nullable="false" sap:unicode="false" sap:label="UpMRLimit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasurementRangeUnit" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MeasRangeUnit"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/></EntityType>
+			<Association Name="OrderHeaderToOperations" sap:content-version="1"><End Type="Z_EAM_ORD2_SRV.OrderHeader" Multiplicity="1" Role="FromRole_OrderHeaderToOperations"/><End Type="Z_EAM_ORD2_SRV.OrderOperation" Multiplicity="*" Role="ToRole_OrderHeaderToOperations"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_OrderHeaderToOperations"><PropertyRef Name="OrderId"/></Principal>
+					<Dependent Role="ToRole_OrderHeaderToOperations"><PropertyRef Name="OrderNumber"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="OperationToComponent" sap:content-version="1"><End Type="Z_EAM_ORD2_SRV.OrderOperation" Multiplicity="1" Role="FromRole_OperationToComponent"/><End Type="Z_EAM_ORD2_SRV.OperationComponent" Multiplicity="*" Role="ToRole_OperationToComponent"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_OperationToComponent"><PropertyRef Name="OrderNumber"/><PropertyRef Name="OperationNumber"/></Principal>
+					<Dependent Role="ToRole_OperationToComponent"><PropertyRef Name="OrderNumber"/><PropertyRef Name="OperationNumber"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="OperationToMeasurementPoint" sap:content-version="1"><End Type="Z_EAM_ORD2_SRV.OrderOperation" Multiplicity="1" Role="FromRole_OperationToMeasurementPoint"/><End Type="Z_EAM_ORD2_SRV.MeasurementPoint" Multiplicity="*" Role="ToRole_OperationToMeasurementPoint"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_OperationToMeasurementPoint"><PropertyRef Name="OrderNumber"/><PropertyRef Name="OperationNumber"/></Principal>
+					<Dependent Role="ToRole_OperationToMeasurementPoint"><PropertyRef Name="OrderNumber"/><PropertyRef Name="OperationNumber"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="Z_EAM_ORD2_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="OrderHeaderSet" EntityType="Z_EAM_ORD2_SRV.OrderHeader" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="OrderOperationSet" EntityType="Z_EAM_ORD2_SRV.OrderOperation" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="RevisionHelpSet" EntityType="Z_EAM_ORD2_SRV.RevisionHelp" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="OperationComponentSet" EntityType="Z_EAM_ORD2_SRV.OperationComponent" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="MeasurementPointSet" EntityType="Z_EAM_ORD2_SRV.MeasurementPoint" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="OperationToMeasurementPointSet" Association="Z_EAM_ORD2_SRV.OperationToMeasurementPoint" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="OrderOperationSet" Role="FromRole_OperationToMeasurementPoint"/><End EntitySet="MeasurementPointSet" Role="ToRole_OperationToMeasurementPoint"/></AssociationSet>
+				<AssociationSet Name="OperationToComponentSet" Association="Z_EAM_ORD2_SRV.OperationToComponent" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="OrderOperationSet" Role="FromRole_OperationToComponent"/><End EntitySet="OperationComponentSet" Role="ToRole_OperationToComponent"/></AssociationSet>
+				<AssociationSet Name="OrderHeaderToOperationsSet" Association="Z_EAM_ORD2_SRV.OrderHeaderToOperations" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="OrderHeaderSet" Role="FromRole_OrderHeaderToOperations"/><End EntitySet="OrderOperationSet" Role="ToRole_OrderHeaderToOperations"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="https://AZ-FEPAST-02.EMEA.ECM.ERA:443/sap/opu/odata/sap/Z_EAM_ORD2_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://AZ-FEPAST-02.EMEA.ECM.ERA:443/sap/opu/odata/sap/Z_EAM_ORD2_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,102 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="com.eramet.maintenanceF5D.controller.OTDetail" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page id="detailOT" showNavButton="true" navButtonPress="onPressNavBack">
+				<OverflowToolbar class="toolbar">
+					<Button icon="sap-icon://home" type="Default" press="backToHome">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+			<!--		<ToolbarSeparator>
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</ToolbarSeparator>-->
+					<Button type="Default" text="{i18n>followupLinkText1}" tooltip="{i18n>followupLinkText1}" press="backToWorkPage">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+			<!--		<ToolbarSeparator>
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</ToolbarSeparator>	-->	
+					<Button type="Default" text="{i18n>followupLinkText2}" tooltip="{i18n>followupLinkText2}" press="onPressNavBack">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>	
+			<!--		<ToolbarSeparator>
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</ToolbarSeparator>-->	
+					<Button id="finalText" type="Default" enabled="false">
+						<layoutData>
+							<OverflowToolbarLayoutData shrinkable="true" priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+				</OverflowToolbar>
+				<content>
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>
+							<Label text="{i18n>otDetailText1}"></Label>
+							<Input editable="{path: 'otViewModel>/editable'}"/>
+						</f:content>
+					</f:SimpleForm>	
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" title="{i18n>otDetailSubtitle}">
+						<f:content>
+							<Label text="{i18n>otDetailText2}"></Label>
+							<Input width="50%" editable="{path: 'otViewModel>/editable'}"/>
+							
+							<Label text="{i18n>otDetailText3}"></Label>
+							<Input width="50%" editable="{path: 'otViewModel>/editable'}"/>
+						</f:content>	
+					</f:SimpleForm>	
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>	
+							<Label text="{i18n>otDetailText4}"></Label>
+							<Input editable="{path: 'otViewModel>/editable'}"/>
+							
+							<Label text="{i18n>otDetailText5}"></Label>
+							<Input editable="{path: 'otViewModel>/editable'}"/>
+							
+							<Label text="{i18n>otDetailText6}"></Label>
+							<Input editable="{path: 'otViewModel>/editable'}"/>
+							
+							<Label text="{i18n>otDetailText7}"></Label>
+							<Input editable="{path: 'otViewModel>/editable'}"/>
+							
+							<Label text="{i18n>otDetailText8}"></Label>
+							<Input editable="{path: 'otViewModel>/editable'}"/>
+							
+							<Label text="{i18n>otDetailText9}"></Label>
+							<Input editable="{path: 'otViewModel>/editable'}"/>
+							
+							<Label text="{i18n>otDetailText10}"></Label>
+							<Input editable="{path: 'otViewModel>/editable'}"/>
+							
+							<Label text="{i18n>otDetailText11}"></Label>
+							<Input editable="{path: 'otViewModel>/editable'}"/>
+							
+							<Label text="{i18n>otDetailText12}"></Label>
+							<Button text="15" press="onPressNavToOperations"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button icon="{path: 'otViewModel>/icon'}" press="onPressEdit" type="Emphasized"/>
+					</OverflowToolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

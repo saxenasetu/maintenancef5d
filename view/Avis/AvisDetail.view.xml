@@ -1,0 +1,217 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" 
+	controllerName="com.eramet.maintenanceF5D.controller.Avis.AvisDetail" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page>
+				<customHeader>
+					<Toolbar>
+						<Button icon="sap-icon://nav-back" press="onPressNavBack"/>
+						<!-- The currentLocationText set manually by id, because it depens on the selected Avis number -->
+						<Breadcrumbs id="breadcrumbs" separatorStyle="GreaterThan" class="sapUiSmallMargin">
+							<Link press="backToAvis" text="{i18n>avisLinkText}" tooltip="{i18n>avisLinkText}"/>
+						</Breadcrumbs>
+					</Toolbar>
+				</customHeader>
+				
+				<content>
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>	
+							<Label text="{i18n>avisDetailAuteur}"/>
+							<Input 
+								id="auteur" 
+								value="{path: 'avisDetail>/ReportedByText'}"
+								editable="false"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeRE'}"/>
+							
+							<Label text="{i18n>avisDetailDescription}"/>
+							<Input 
+								id="description" 
+								value="{path: 'avisDetail>/ShortText'}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"/>
+							
+							<Label labelFor="orderNumber" text="{i18n>avisDetailOrderNumber}"/>
+							<Input 
+								id="orderNumber"
+								value="{path: 'avisDetail>/OrderNumber'}"
+								editable="false"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeRE'}"/>
+				
+							<Label text="{i18n>avisDetailDate}"/>
+							<DateTimePicker 
+								id="date" 
+								value="{
+									path: 'avisDetail>/NotificationDate', 
+									type: 'sap.ui.model.type.Date', 
+									formatOptions: { 
+										style: 'short', 
+										pattern: 'dd/MM/yyyy'
+									}
+								}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeRE'}"/>
+							
+							<Label labelFor="equipment" text="{i18n>avisDetailEquipement}"/>
+							<Input 
+								id="equipment" 
+								value="{path: 'avisDetail>/TechObjNumber'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeRE'}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"/>
+							
+							<Label labelFor="equipmentSelect" text="{i18n>avisDetailEquipement}"/>
+							<Input id="equipmentSelect" 
+								type="Text" 
+								width="100%"
+								showSuggestion="true" 
+								suggest="onHandleSuggest"
+								suggestionItemSelected="onSuggSelected" 
+								liveChange="onDeleteKey" 
+								startSuggestion="3"
+								showValueHelp="true" 
+								valueHelpRequest="onPressBarcode"
+								visible="{
+									path: 'avisDetailModel>/mode', 
+									formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeC'
+								}">
+								<customData>
+									<core:CustomData id="clientIdKey" key="" value=""/>
+								</customData>
+							</Input>
+							
+							<Label text="{i18n>avisDetailExploitation}"/>
+							<Input
+								id="secteur"
+								value="{path: 'avisDetail>/PlantSection'} {path: 'avisDetail>/PlantSectionText'}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeRE'}"/>
+							
+							<Label text="{i18n>avisDetailCriticite}"/>
+							<Input 
+								id="criticite"
+								value="{path: 'avisDetail>/PriorityText'}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeRE'}"/>
+							
+							<Label labelFor="commentOld" text="{i18n>avisDetailComment}"/>
+							<TextArea
+								id="commentOld"
+								rows="4"
+								value="{path: 'avisDetail>/TextOld'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeRE'}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"/>
+							<Label labelFor="commentNew" text="{i18n>avisDetailCommentNew}"/>
+							<TextArea
+								id="commentNew"
+								rows="4"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeCE'}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRCE'}"/>
+							
+							<Label 
+								text="{i18n>avisDetailDefaillancet}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeC'}"/>
+							<Input 
+								id="defaillance"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeC'}"/>
+							
+							<Label text="{i18n>avisDetailResponsable}"/>
+							<Input 
+								id="posteResponsable"
+								value="{path: 'avisDetail>/MainWorkCenter'}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeRE'}"/>
+							
+							<Label labelFor="posteExecutant" text="{i18n>avisDetailExecutant}"/>
+							<Input 
+								id="posteExecutant"
+								value="{path: 'avisDetail>/LocationWorkCenter'}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeR'}"/>
+							<Label labelFor="posteExecutantSelect" text="{i18n>avisDetailExecutant}"/>
+							<Select 
+								id="posteExecutantSelect"
+								items="{path: 'posteExecutantModel>/'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeE'}">
+								<core:Item key="{path: 'posteExecutantModel>WorkCenter'}" text="{path: 'posteExecutantModel>WorkCenter'}" />
+							</Select>
+							
+							<Label text="{i18n>avisDetailRepercussion}"/>
+							<Input 
+								id="repercussion"
+								value="{path: 'avisDetail>/Effect'} - {path: 'avisDetail>/EffectText'}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"/>
+							
+							<Label text=""/>
+							<CheckBox 
+								id="equipmentCheckbox"
+								text="{i18n>avisDetailArrete}"
+								selected="{path: 'avisDetail>/Breakdown'}"     
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"/>
+							
+							<Label text="{i18n>avisDetailSouhaite}"/>
+							<Input 
+								id="fin"
+								value="{path: 'avisDetail>/RequiredEndDate', formatter: 'com.eramet.maintenanceF5D.util.formatter.avisDate'}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeRE'}"/>
+							
+							<Label text="{i18n>avisDetailLocalisation}"/>
+							<Input 
+								id="localisation"
+								value="{path: 'avisDetail>/Location'}"
+								editable="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setDisplayModeRC'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setVisibleModeRE'}"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+				<footer>
+					<Bar>
+						<contentLeft>
+							<Button 
+								id="repousser"
+								press="onPressRepousser" 
+								text="{i18n>avisDetailButtonText1}" 
+								tooltip="{i18n>avisDetailButtonText1}" 
+								type="Emphasized"
+								enabled="{path: 'avisDetail>/OrderNumber', formatter: 'com.eramet.maintenanceF5D.util.formatter.setRemoveButton'}"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setEditButton'}"/>
+							<Button
+								id="demarrer"
+								press="onPressDemarrer" 
+								text="{i18n>avisDetailButtonText2}" 
+								tooltip="{i18n>avisDetailButtonText2}" 
+								type="Ghost"
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setEditButton'}"/>
+							<Button 
+								id="save" 
+								press="onPressCreate" 
+								type="Ghost" 
+								icon="sap-icon://save" 
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setCreateButtons'}"/>
+							<Button 
+								id="cancel" 
+								press="onPressNavBack" 
+								type="Ghost" 
+								icon="sap-icon://reset" 
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setCreateButtons'}"/>
+							<Button 
+								id="attachment" 
+								press="onPressUpload" 
+								type="Ghost" 
+								icon="sap-icon://attachment" 
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setCreateButtons'}"/>
+						</contentLeft>
+						<contentRight>
+							<Button 
+								id="edit" 
+								press="onPressEdit" 
+								type="Ghost" 
+								icon="sap-icon://edit" 
+								visible="{path: 'avisDetailModel>/mode', formatter: 'com.eramet.maintenanceF5D.util.formatter.setEditButton'}"/>
+						</contentRight>
+					</Bar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

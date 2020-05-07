@@ -1,0 +1,317 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "com.eramet.maintenanceF5D",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0"
+        },
+        "dataSources": {
+            "EAM_OBJPG_MAINTNOTIFICATION_SRV": {
+                "uri": "/sap/opu/odata/sap/EAM_OBJPG_MAINTNOTIFICATION_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/EAM_OBJPG_MAINTNOTIFICATION_SRV/metadata.xml"
+                }
+            },
+            "ZUI5_GW_PM_NOTIF_SRV": {
+                "uri": "/sap/opu/odata/sap/ZUI5_GW_PM_NOTIF_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/ZUI5_GW_PM_NOTIF_SRV/metadata.xml"
+                }
+            },
+            "ZUI5_GW_PM_ORDER_SRV": {
+                "uri": "/sap/opu/odata/sap/ZUI5_GW_PM_ORDER_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/ZUI5_GW_PM_ORDER_SRV/metadata.xml"
+                }
+            },
+            "CV_ATTACHMENT_SRV": {
+                "uri": "/sap/opu/odata/sap/CV_ATTACHMENT_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/CV_ATTACHMENT_SRV/metadata.xml"
+                }
+            },
+            "EAM_OBJPG_TECHNICALOBJECT_SRV": {
+                "uri": "/sap/opu/odata/sap/EAM_OBJPG_TECHNICALOBJECT_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/EAM_OBJPG_TECHNICALOBJECT_SRV/metadata.xml"
+                }
+            },
+            "API_WORK_CENTERS": {
+                "uri": "/sap/opu/odata/sap/API_WORK_CENTERS/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/API_WORK_CENTERS/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "com.eramet.maintenanceF5D.view.Menu",
+            "type": "XML",
+            "async": true,
+            "id": "Home"
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.6",
+            "libs": {
+                "sap.ui.layout": {},
+                "sap.ui.core": {},
+                "sap.m": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.eramet.maintenanceF5D.i18n.i18n"
+                }
+            },
+            "objpgTechnicalModel": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "EAM_OBJPG_MAINTNOTIFICATION_SRV",
+                "preload": true
+            },
+            "zEamModel": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZUI5_GW_PM_NOTIF_SRV",
+                "preload": true
+            },
+            "workOrderModel": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZUI5_GW_PM_ORDER_SRV",
+                "preload": true
+            },
+            "uploadAttachmentModel": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "CV_ATTACHMENT_SRV",
+                "preload": true
+            },
+            "equipmentModel": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "EAM_OBJPG_TECHNICALOBJECT_SRV",
+                "preload": true
+            },
+            "workCenterModel": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "API_WORK_CENTERS",
+                "preload": true
+            }
+        },
+        "resources": {
+            "configuration": [
+                {
+                    "propertiesFileSourceEncoding": "UTF-8"
+                }
+            ],
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "com.eramet.maintenanceF5D.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "Home",
+                    "target": "Home"
+                },
+                {
+                    "pattern": "Avis",
+                    "name": "Avis",
+                    "target": "Avis"
+                },
+                {
+                    "pattern": "Detail",
+                    "name": "Detail",
+                    "target": "Detail"
+                },
+                {
+                    "pattern": "Followup",
+                    "name": "Followup",
+                    "target": "Followup"
+                },
+                {
+                    "pattern": "OTDetail",
+                    "name": "OTDetail",
+                    "target": "OTDetail"
+                },
+                {
+                    "pattern": "Operations",
+                    "name": "Operations",
+                    "target": "Operations"
+                },
+                {
+                    "pattern": "ToOpDetail",
+                    "name": "ToOpDetail",
+                    "target": "ToOpDetail"
+                },
+                {
+                    "pattern": "Article",
+                    "name": "Article",
+                    "target": "Article"
+                },
+                {
+                    "pattern": "AvisDetail",
+                    "name": "AvisDetail",
+                    "target": "AvisDetail"
+                },
+                {
+                    "pattern": "InfoStock",
+                    "name": "InfoStock",
+                    "target": "InfoStock"
+                },
+                {
+                    "pattern": "InfoEquipment",
+                    "name": "InfoEquipment",
+                    "target": "InfoEquipment"
+                },
+                {
+                    "pattern": "Rattaches",
+                    "name": "Rattaches",
+                    "target": "Rattaches"
+                },
+                {
+                    "pattern": "DocumentTech",
+                    "name": "DocumentTech",
+                    "target": "DocumentTech"
+                },
+                {
+                    "pattern": "Filter",
+                    "name": "Filter",
+                    "target": "Filter"
+                }
+            ],
+            "targets": {
+                "Home": {
+                    "viewName": "Home"
+                },
+                "Avis": {
+                    "viewName": "Avis"
+                },
+                "Detail": {
+                    "viewName": "Avis/Detail"
+                },
+                "Followup": {
+                    "viewName": "OT/Followup"
+                },
+                "OTDetail": {
+                    "viewName": "OT/OTDetail"
+                },
+                "Operations": {
+                    "viewName": "OT/Operations"
+                },
+                "ToOpDetail": {
+                    "viewName": "OT/ToOpDetail"
+                },
+                "Article": {
+                    "viewName": "OT/Article"
+                },
+                "AvisDetail": {
+                    "viewName": "Avis/AvisDetail"
+                },
+                "InfoStock": {
+                    "viewName": "InfoStock/InfoStock"
+                },
+                "InfoEquipment": {
+                    "viewName": "InfoEquipment/InfoEquipment"
+                },
+                "Rattaches": {
+                    "viewName": "InfoEquipment/Rattaches"
+                },
+                "DocumentTech": {
+                    "viewName": "InfoEquipment/DocumentTech"
+                },
+                "Filter": {
+                    "viewName": "OT/Filter"
+                }
+            }
+        }
+    },
+    "sap.platform.hcp": {
+        "uri": "webapp",
+        "_version": "1.1.0"
+    },
+    "sap.mobile": {
+        "definingRequests": {},
+        "stores": []
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zmaintenance2/webapp",
+        "_version": "1.1.0"
+    }
+}

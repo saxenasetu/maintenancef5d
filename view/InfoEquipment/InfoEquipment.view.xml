@@ -1,0 +1,79 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="com.eramet.maintenanceF5D.controller.InfoEquipment.InfoEquipment" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page showHeader="false">
+				<content>
+					<Toolbar>
+						<SearchField
+							id="searchField"
+							enableSuggestions="false"
+							search="onSearch"
+							suggest="onSuggest"
+							liveChange="onChange"
+							width="85%"
+							suggestionItems="{ path: 'infoEquipmentModel>/'}">
+							<suggestionItems>
+								<SuggestionItem 
+									text="{path: 'infoEquipmentModel>TechnicalObjectLabel'}" 
+									description="{path: 'infoEquipmentModel>TechnicalObjectDescription'}" 
+									key="{path: 'infoEquipmentModel>TechnicalObjectLabel'}"/>
+							</suggestionItems>
+						</SearchField>
+						<Button id="barcode" icon="sap-icon://bar-code" width="15%" press="onPressBarcode"/>
+					</Toolbar>
+					<f:SimpleForm id="equipmentInputs" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" visible="false">
+						<f:content>
+							<!--<Label text="{i18n>infoEquipmentCategorie}"></Label>-->
+							<!--<Input value="{path: 'equipmentViewModel>/TechnicalObjectCategory'}"/>-->
+							
+							<Label text="{i18n>infoEquipmentFamille}"></Label>
+							<Input value="{path: 'equipmentViewModel>/TechnicalObjectType'} {path: 'equipmentViewModel>/TechnicalObjectTypeDesc'} "/>
+							
+							<Label text="{i18n>infoEquipmentLocation}"></Label>
+							<Input value="{path: 'equipmentViewModel>/LocationName'}"/>	
+							
+							<Label text="{i18n>infoEquipmentSecteur}"></Label>
+							<Input value="{path: 'equipmentViewModel>/PlantSection'} - {path: 'equipmentViewModel>/PlantSectionPersonRespName'} - {path: 'equipmentViewModel>/PlantSectionPersonRespPhone'}"/>
+							
+							<Label text="{i18n>infoEquipmentCordinator}"></Label>
+							<Input value="{path: 'equipmentViewModel>/MainWorkCenter'}"/>
+							
+							<Label text="{i18n>infoEquipmentCritical}"></Label>
+							<Input value="{path: 'equipmentViewModel>/ABCIndicatorDesc'}"/>
+							
+							<Label text="{i18n>infoEquipmentPostTech}"></Label>
+							<Input value="{path: 'equipmentViewModel>/FunctionalLocationLabelName'}"/>
+							
+							<!--<Label text="{i18n>infoEquipmentGarantie}"></Label>-->
+							<!--<Input value="{path: 'equipmentViewModel>/garantie'}"/>-->
+							
+							<!--<Label text="{i18n>infoEquipmentMesure}"></Label>-->
+							<!--<Input value="{path: 'equipmentViewModel>/mesure'}"/>-->
+						</f:content>
+					</f:SimpleForm>	
+				</content>
+				<footer>
+					<Bar>
+						<contentLeft>
+							<Button 
+								id="actions"
+								text="{i18n>infoEquipmentButtonActions}"
+								type="Ghost"
+								enabled="false"
+								press="onPressActions"/>
+						</contentLeft>
+						<contentRight>
+							<Button
+								id="documents"
+								icon="sap-icon://education" 
+								type="Ghost"
+								press="onPressNavToDocumentTech"/>
+						</contentRight>
+					</Bar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

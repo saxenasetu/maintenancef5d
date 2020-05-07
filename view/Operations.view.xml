@@ -1,0 +1,68 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.eramet.maintenanceF5D.controller.Operations" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page id="operations" showNavButton="true" navButtonPress="onPressNavBack">
+				<OverflowToolbar class="toolbar">
+					<Button icon="sap-icon://home" type="Default" press="backToHome">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+		
+					<Button type="Default" text="{i18n>followupLinkText1}" tooltip="{i18n>followupLinkText1}" press="backToWorkPage">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>		
+
+					<Button type="Default" text="{i18n>followupLinkText2}" tooltip="{i18n>followupLinkText2}" press="backToFollowup">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+					
+					<Button text="{i18n>operationsTitle}" tooltip="{i18n>operationsTitle}" enabled="false" type="Default">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="Low"/>
+						</layoutData>
+					</Button>
+				</OverflowToolbar>
+				<content>
+					
+				<CustomListItem type="Active" class="sapUiSmallMarginBottom blueBackground">
+					<content>
+						<HBox>
+							<VBox width="100%">
+								<items>
+									<Title id="otNumber" level="H1" class="whiteLabel biggerSize sapUiSmallMarginBegin sapUiSmallMarginTop" />
+									<Text id="desc" class="whiteLabel sapUiSmallMarginBegin" />
+									<Text id="date" class="whiteLabel sapUiSmallMarginBegin sapUiSmallMarginBottom" />
+								</items>
+							</VBox>
+							<Button 
+								text="Details" 
+								icon="sap-icon://navigation-right-arrow" 
+								class="sapUiSmallMarginBegin sapUiSmallMarginTop sapUiSmallMarginEnd"
+								press="onPressNavToOTDetail"/>
+						</HBox>
+					</content>
+				</CustomListItem>
+				
+				<Tree id="Tree" items="{path: 'treeModel>/'}">
+					<CustomTreeItem type="Navigation" press="onPressNavToOpDetail">
+							<HBox>
+								<core:Icon src="{path: 'treeModel>src'}" class="sapUiSmallMarginBegin sapUiSmallMarginTop"/>
+								<Label text="{path: 'treeModel>operation'}" design="Bold" class="sapUiSmallMarginBegin sapUiSmallMarginTop"/>
+								<Button icon="{path: 'treeModel>subSrc'}" visible="{path: 'treeModel>visibleSub'}" press="onPressChangeIcon"/>
+								<Label text="{path: 'treeModel>operationSub'}" design="Bold" visible="{path: 'treeModel>visibleSub'}" class="sapUiSmallMarginBegin sapUiSmallMarginTop"/>
+								<core:Icon src="sap-icon://attachment" visible="{path: 'treeModel>visibleCount'}" class="sapUiSmallMarginBegin sapUiSmallMarginTop"/>
+								<Label text="{path: 'treeModel>counter'}" visible="{path: 'treeModel>visibleCount'}" class="sapUiSmallMarginBegin sapUiSmallMarginTop"/>
+							</HBox>
+						</CustomTreeItem>
+					</Tree>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

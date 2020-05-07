@@ -1,0 +1,79 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" 
+	controllerName="com.eramet.maintenanceF5D.controller.Followup" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>followupTitle}" showNavButton="true" navButtonPress="onPressNavBack">
+				<OverflowToolbar class="toolbar"> 
+					<Button icon="sap-icon://home" type="Default" press="backToHome">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+
+					<Button type="Default" text="{i18n>followupLinkText1}" tooltip="{i18n>followupLinkText1}" press="onPressNavBack">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>	
+	
+					<Button type="Default" text="{i18n>followupLinkText2}" tooltip="{i18n>followupLinkText2}" enabled="false">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>	
+				</OverflowToolbar>
+				<content>
+					<Toolbar>
+						<Button icon="sap-icon://search" type="Emphasized" press="onOpenOTSearchDialog" />
+						<Button id="date" text="{i18n>followupButton1}" press="onPressDate" />
+						<!--<Button id="prio" text="{i18n>followupButton2}" press="onPressPrio"/>-->
+						<Select id="prio" width="100%" forceSelection="false" change="onSelectItem">
+							<items>
+								<c:Item text="{i18n>followupPrio1}" key="1"/>
+								<c:Item text="{i18n>followupPrio2}" key="2"/>
+								<c:Item text="{i18n>followupPrio3}" key="3"/>
+								<c:Item text="{i18n>followupPrio4}" key="4"/>
+							</items>
+						</Select>
+						<Button id="statut" text="{i18n>followupButton3}" press="onPressStaut"/>
+					</Toolbar>
+					<Toolbar>
+						<Select id="type" width="100%" forceSelection="false" change="onSelectItem">
+							<items>
+								<c:Item text="{i18n>followupType1}" key="1"/>
+								<c:Item text="{i18n>followupType2}" key="2"/>
+								<c:Item text="{i18n>followupType3}" key="3"/>
+							</items>
+						</Select>
+					</Toolbar>
+					<List
+						id="followupList"
+						items="{path: 'followupListModel>/'}">
+						<items>
+							<ObjectListItem 
+								title="{path: 'followupListModel>title'}" 		
+								type="Navigation"
+								press="onPressNavToOTDetail">
+								<firstStatus>
+									<ObjectStatus text="{path: 'followupListModel>date'}" />
+								</firstStatus>
+								<secondStatus>
+									<ObjectStatus 
+										text="{path: 'followupListModel>prio'}" 
+										state="{path: 'followupListModel>prio', formatter: 'com.eramet.maintenanceF5D.util.formatter.setPrioStatus'}"/>
+								</secondStatus>
+								<attributes>
+									<ObjectAttribute text="{path: 'followupListModel>text'}" />
+									<ObjectAttribute text="{path: 'followupListModel>status'}" />
+									<ObjectAttribute text="{path: 'followupListModel>codePoste'}" />
+									<ObjectAttribute text="{path: 'followupListModel>description'}" />
+									<ObjectAttribute text="{path: 'followupListModel>type'}" />
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

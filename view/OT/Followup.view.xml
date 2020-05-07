@@ -1,0 +1,66 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" 
+	controllerName="com.eramet.maintenanceF5D.controller.OT.Followup" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page showHeader="false">
+				<content>
+					<Toolbar class="sapUiSmallMarginTop">
+						<Button icon="sap-icon://search" type="Emphasized" press="onOpenOTSearchDialog" />
+						<Button id="date" text="{i18n>followupButton1}" press="onPressDate" />
+						<Button id="prio" text="{i18n>followupButton2}" press="onPressPrio" />
+						<Button id="statut" text="{i18n>followupButton3}" press="onPressStaut" />
+						<Button id="filter" text="{i18n>followupButton4}" press="onPressNavToFilter" icon="sap-icon://filter" />
+					</Toolbar>
+					<Toolbar>
+						<Select id="type" width="90%" forceSelection="false" change="onSelectItem">
+							<items>
+								<c:Item text="{i18n>followupType0}" key="00"/>
+								<c:Item text="ZM01 {i18n>followupType1}" key="ZM01"/>
+								<c:Item text="ZM02 {i18n>followupType2}" key="ZM02"/>
+								<c:Item text="ZM03 {i18n>followupType3}" key="ZM03"/>
+								<c:Item text="ZM04 {i18n>followupType4}" key="ZM04"/>
+								<c:Item text="ZM05 {i18n>followupType5}" key="ZM05"/>
+								<c:Item text="ZM06 {i18n>followupType6}" key="ZM06"/>
+								<c:Item text="ZM07 {i18n>followupType7}" key="ZM07"/>
+							</items>
+						</Select>
+						<Button id="sync" press="onPressRefresh" icon="sap-icon://synchronize" />
+					</Toolbar>
+					<List
+						id="followupList"
+						items="{path: 'followupListModel>/'}">
+						<items>
+							<ObjectListItem 
+								title="N° OT {path: 'followupListModel>OrderId'}" 		
+								type="Navigation"
+								press="onPressNavToOTDetail">
+								<firstStatus>
+									<ObjectStatus 
+										text="{
+											path: 'followupListModel>StartDate',
+											type: 'sap.ui.model.type.Date', 
+											formatOptions: { 
+												style: 'short', 
+												pattern: 'dd/MM/yyyy'
+											}
+										}" />
+								</firstStatus>
+								<secondStatus>
+									<ObjectStatus
+										text="{path: 'followupListModel>Priority'}" 
+										state="{path: 'followupListModel>Priority', formatter: 'com.eramet.maintenanceF5D.util.formatter.setPrioStatus'}"/>
+								</secondStatus>
+								<attributes>
+									<ObjectAttribute text="{path: 'followupListModel>ShortText'}" />
+									<ObjectAttribute text="{path: 'followupListModel>SystemStatus'}" />
+									<ObjectAttribute text="{path: 'followupListModel>FunctionalLocation'}" />
+									<ObjectAttribute text="{path: 'followupListModel>OrderType'}" visible="false"/>
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

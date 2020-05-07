@@ -1,0 +1,24 @@
+<c:FragmentDefinition controllerName="com.eramet.maintenanceF5D.controller.BaseController"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:u="sap.ui.unified">
+	<Dialog id="customerDialog" title="{i18n>customerDialogTitle}">
+		<content>
+			<VBox justifyContent="Center" alignItems="Center">	
+				<GenericTile id="depanner" header="{i18n>customerDialogType1}" press="onSelectCustomer" class="sapUiSmallMargin purple">
+					<TileContent>
+						<ImageContent src="sap-icon://sys-help"/>
+					</TileContent>
+				</GenericTile>
+				<GenericTile id="technicien" header="{i18n>customerDialogType2}" press="onSelectCustomer" class="sapUiSmallMargin blue">
+					<TileContent>
+						<ImageContent src="sap-icon://wrench"/>
+					</TileContent>
+				</GenericTile>
+				<GenericTile id="rondier" header="{i18n>customerDialogType3}" press="onSelectCustomer" class="sapUiSmallMargin green">
+					<TileContent>
+						<ImageContent src="sap-icon://timesheet"/>
+					</TileContent>
+				</GenericTile>
+			</VBox>
+		</content>
+	</Dialog>
+</c:FragmentDefinition>

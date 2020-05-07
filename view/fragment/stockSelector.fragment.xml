@@ -1,0 +1,22 @@
+<c:FragmentDefinition controllerName="com.eramet.maintenanceF5D.controller.InfoStock"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" 
+	xmlns:c="sap.ui.core" xmlns:form="sap.ui.layout.form">
+	<Dialog id="stockDialog" title="{i18n>stockSelectorTitle}" contentWidth="auto">
+		<content>
+			<form:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+				<form:content>
+					<VBox items="{path: 'followupListModel>/'}">
+						<Button 
+							text="{path: 'followupListModel>article'} - {path: 'followupListModel>title'} - {path: 'followupListModel>text'}" 
+							width="100%"
+							press="onPressOT"/>
+					</VBox>
+				</form:content>
+			</form:SimpleForm>
+		</content>
+		<buttons>
+			<Button text="{i18n>stockSelectorButton}" tooltip="{i18n>stockSelectorButton}" press="onPressClose" type="Ghost"></Button>	
+		</buttons>
+	</Dialog>
+</c:FragmentDefinition>

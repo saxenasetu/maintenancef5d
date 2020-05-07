@@ -1,0 +1,58 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.eramet.maintenanceF5D.controller.HistoryOT" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>historyOTTitle}">
+				<content>
+					<OverflowToolbar class="toolbar">
+						<Button icon="sap-icon://home" type="Default" press="backToHome">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+						
+						<!--<Button type="Default" text="{i18n>followupLinkText1}" tooltip="{i18n>followupLinkText1}" press="onPressNavBack">-->
+						<!--	<layoutData>-->
+						<!--		<OverflowToolbarLayoutData priority="AlwaysOverflow"/>-->
+						<!--	</layoutData>-->
+						<!--</Button>-->
+						
+						<Button type="Default" text="{i18n>historyOTTitle}" tooltip="{i18n>historyOTTitle}" enabled="false">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="AlwaysOverflow"/>
+							</layoutData>
+						</Button>
+					</OverflowToolbar>
+					
+					<Toolbar width="100%">
+						<Button id="date" text="{i18n>historyOTTButton1}" press="onPressDate" width="25%"/>
+						<Button id="statut" text="{i18n>historyOTTButton2}" press="onPressStatut" width="25%"/>
+						<Button id="type" text="{i18n>historyOTTButton3}" press="onPressType" width="25%"/>
+						<Button icon="sap-icon://clear-filter" press="onPressClearFilter" width="25%"/>
+					</Toolbar>
+					<List
+						id="historyList"
+						items="{path: 'historyModel>/'}">
+						<items>
+							<ObjectListItem 
+								title="{path: 'historyModel>title'}" 
+								type="Active" 
+								press="onPressNavToAvisDetail">
+								<firstStatus>
+									<ObjectStatus icon="{path: 'historyModel>icon'}" />
+								</firstStatus>
+								<attributes>
+									<ObjectAttribute text="{path: 'historyModel>text'}" />
+									<ObjectAttribute text="{path: 'historyModel>description'}" />	
+									<ObjectAttribute text="{path: 'historyModel>date'}" />
+									<ObjectAttribute text="{path: 'historyModel>status'}" />
+									<ObjectAttribute text="{path: 'historyModel>type'}" />
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

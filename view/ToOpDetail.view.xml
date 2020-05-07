@@ -1,0 +1,146 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:c="sap.ui.core"
+	controllerName="com.eramet.maintenanceF5D.controller.ToOpDetail" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page id="toOpDetail" showNavButton="true" navButtonPress="onPressNavBack">
+				<OverflowToolbar width="100%" class="toolbar">
+					<Button icon="sap-icon://home" type="Default" press="backToHome">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+	
+					<Button type="Default" text="{i18n>followupLinkText1}" tooltip="{i18n>followupLinkText1}" press="backToWorkPage">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+	
+					<Button type="Default" text="{i18n>followupLinkText2}" tooltip="{i18n>followupLinkText2}" press="backToFollowup">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+	
+					<Button id="finalText" type="Default" press="onPressOTDetail">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="Low"/>
+						</layoutData>
+					</Button>
+	
+					<Button text="{i18n>operationsTitle}" tooltip="{i18n>operationsTitle}" press="backToOperations"  type="Default">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="Low"/>
+						</layoutData>
+					</Button>
+	
+					<Button id="finalText2" type="Default" enabled="false">
+						<layoutData>
+							<OverflowToolbarLayoutData shrinkable="false" priority="Low"/>
+						</layoutData>
+					</Button>
+				</OverflowToolbar>
+				<content>
+					<CustomListItem type="Active" class="sapUiSmallMarginBottom blueBackground">
+						<content>
+							<HBox>
+								<VBox width="100%">
+									<items>
+										<Title id="subOperations" level="H1" class="whiteLabel biggerSize sapUiSmallMarginBegin sapUiSmallMarginTop sapUiSmallMarginEnd" />
+									</items>
+								</VBox>
+								<Button 
+									text="Details" 
+									icon="sap-icon://navigation-right-arrow" 
+									class="sapUiSmallMarginBegin sapUiSmallMarginEnd"
+									press="onPressNavToOTDetail"/>
+							</HBox>
+						</content>
+					</CustomListItem>
+					
+					
+					<List id="list" backgroundDesign="Transparent">
+						<CustomListItem id="customList">
+							<f:SimpleForm id="additionalBox" class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+								labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+								<f:content>
+									<Label text="{i18n>toOpDetailDate1}"/>
+									<DateTimePicker editable="{path: 'otViewModel>/editable'}"/>
+									
+									<Label text="{i18n>toOpDetailDate2}"/>
+									<DateTimePicker editable="{path: 'otViewModel>/editable'}"/>
+									
+									<Label text="{i18n>toOpDetailIntervenant}"></Label>
+									<Input  editable="{path: 'otViewModel>/editable'}"/>
+								</f:content>
+							</f:SimpleForm>
+							<Bar>
+								<contentLeft/>
+								<contentMiddle/>
+								<contentRight>
+									<Button icon="sap-icon://sys-minus" press="onPressRemove"/>
+									<Button icon="sap-icon://sys-add" press="onPressAdd"/>
+								</contentRight>
+							</Bar>
+						</CustomListItem>
+					</List>
+		
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>
+							<Label text="{i18n>toOpDetailSousEquipment}"/>
+							<Select width="100%" forceSelection="false">
+								<items>
+									<c:Item text="{i18n>toOpDetailSousEquipment1}" key="1"/>
+									<c:Item text="{i18n>toOpDetailSousEquipment2}" key="2"/>
+									<c:Item text="{i18n>toOpDetailSousEquipment3}" key="3"/>
+									<c:Item text="{i18n>toOpDetailSousEquipment4}" key="4"/>
+								</items>
+							</Select>
+							<Label text="{i18n>toOpDetailActivite}"/>
+							<Select width="100%" forceSelection="false">
+								<items>
+									<c:Item text="{i18n>toOpDetailActivite1}" key="1"/>
+									<c:Item text="{i18n>toOpDetailActivite2}" key="2"/>
+									<c:Item text="{i18n>toOpDetailActivite3}" key="3"/>
+									<c:Item text="{i18n>toOpDetailActivite4}" key="4"/>
+								</items>
+							</Select>
+							<Label text="{i18n>toOpDetailPartieObjet}"/>
+							<Select width="100%" forceSelection="false">
+								<items>
+									<c:Item text="{i18n>toOpDetailPartieObjet1}" key="1"/>
+									<c:Item text="{i18n>toOpDetailPartieObjet2}" key="2"/>
+									<c:Item text="{i18n>toOpDetailPartieObjet3}" key="3"/>
+									<c:Item text="{i18n>toOpDetailPartieObjet4}" key="4"/>
+								</items>
+							</Select>
+							<Label text="{i18n>toOpDetailCause}"/>
+							<Select width="100%" forceSelection="false">
+								<items>
+									<c:Item text="{i18n>toOpDetailCause1}" key="1"/>
+									<c:Item text="{i18n>toOpDetailCause2}" key="2"/>
+									<c:Item text="{i18n>toOpDetailCause3}" key="3"/>
+									<c:Item text="{i18n>toOpDetailCause4}" key="4"/>
+								</items>
+							</Select>
+							<Label text="{i18n>toOpDetailCompteRendu}"/>
+							<TextArea rows="4"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+				<footer>
+					<Toolbar>
+						<Button text="{i18n>toOpDetailArticle}" type="Emphasized" press="onPressArticle"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://camera" press="onPressCamera"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://attachment" press="onPressFileBrowser"/>
+						<ToolbarSpacer/>
+						<Button text="{i18n>toOpDetailSauvegarder}" press="onPressSave"/>
+					</Toolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

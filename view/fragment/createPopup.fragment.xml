@@ -1,0 +1,99 @@
+<c:FragmentDefinition controllerName="com.eramet.maintenanceF5D.controller.InfoStock"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns="sap.m" 
+	xmlns:c="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" 
+	xmlns:f="sap.ui.layout.form">
+	<Dialog id="createDialog" title="Create new notification" contentWidth="auto">
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" id="newEntitySimpleForm"
+				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024">
+				<f:content>
+					<Label text="Notifictn Type" required="true"/>
+					<Select 
+						forceSelection="false"
+						id="NotificationType_id"
+						enabled="false"
+						visible="true"
+						items="{ path: '/NotificationTypeSet'}"
+						selectedKey="M2">
+						<core:Item key="{NotificationType}" text="{NotificationType} {Description}" />
+					</Select>
+					<!--<Label text="Equipment" required="false"/>-->
+					<!--<Input name="EquipmentID" id="EquipmentID_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"-->
+					<!--	value="{ path: 'EquipmentID', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:18 } }"/>-->
+					<Label text="Equipment" required="false"/>
+					<Select 
+						forceSelection="false"
+						id="EquipmentID_id"
+						items="{path: '/EquipmentSet'}">
+						<core:Item key="{EquipmentID}" text="{EquipmentID} {Description}" />
+					</Select>
+						
+					<!--<Label text="Description" required="false"/>-->
+					<!--<Input name="ShortText" id="ShortText_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="false" visible="true"-->
+					<!--	value="{ path: 'ShortText', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:40 } }"/>-->
+					<!--<Label text="Priority" required="false"/>-->
+					<!--<Input name="Priority" id="Priority_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="false" visible="true"-->
+					<!--	value="{ path: 'Priority', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:1 } }"/>-->
+					
+					<Label text="" required="false"/>
+					<HBox>
+						<Label text="En marche" required="false" class="sapUiTinyMarginTop sapUiTinyMarginEnd" />
+						<Switch 
+							id="Breakdown_id" 
+							customTextOn=" " 
+							customTextOff=" "
+							enabled="true" 
+							visible="true">
+						</Switch>
+						<Label text="Arrêté" required="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop"/>
+					</HBox>
+					<!--<CheckBox name="Breakdown" selected="{ path: 'Breakdown'}" id="Breakdown_id" enabled="true" visible="true"/>-->
+					
+					<Label text="Degraded" required="false"/>
+					<CheckBox name="Degraded" id="Degraded_id" enabled="true" visible="true"/>
+					
+					<Label text="Début de panne" required="false"/>
+					<DateTimePicker
+						id="BreakdownStartDate_id"
+						valueFormat="yyyy-MM-dd-HH-mm-ss" 
+						displayFormat="long"
+						enabled="true"
+						visible="true"/>
+					<!--<DatePicker name="BreakdownStartDate" value="{ path: 'BreakdownStartDate', type: 'sap.ui.model.type.DateTime'}" id="BreakdownStartDate_id"-->
+					<!--	 enabled="true" visible="true"/>-->
+					
+					<!--<Label text="Start Malfn (T)" required="false"/>-->
+					<!--<Input name="BreakdownStartTime" id="BreakdownStartTime_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="false"-->
+					<!--	visible="true" value="{ path: 'BreakdownStartTime', type: 'sap.ui.model.odata.type.Time' }"/>-->
+					
+					<Label text="Symptôme" required="false"/>
+					<Select 
+						forceSelection="false"
+						id="Symptom_id"
+						items="{path: '/SymptomSet'}">
+						<core:Item key="{Symptom}" text="{Symptom} {Description}" />
+					</Select>
+					
+					<!--<Input name="Symptom" id="Symptom_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"-->
+					<!--	value="{ path: 'Symptom', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:8 } }"/>-->
+					<!--<Label text="Notif.Date" required="false"/>-->
+					<!--<DatePicker name="NotificationDate" value="{ path: 'NotificationDate', type: 'sap.ui.model.type.DateTime'}" id="NotificationDate_id"-->
+					<!--	type="DateTime" enabled="false" visible="true"/>-->
+					<!--<Label text="Notif. Time" required="false"/>-->
+					<!--<Input name="NotificationTime" id="NotificationTime_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="false"-->
+					<!--	visible="true" value="{ path: 'NotificationTime', type: 'sap.ui.model.odata.type.Time' }"/>-->
+					
+					<Label text="Comment" required="false"/>
+					<TextArea name="Comment" id="Comment_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true" height="220px"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<buttons>
+			<Button id="save" text="Save" press="onSave" type="Ghost"></Button>	
+			<Button id="cancel" text="Cancel" press="onCancel" type="Ghost"></Button>	
+		</buttons>
+	</Dialog>
+</c:FragmentDefinition>

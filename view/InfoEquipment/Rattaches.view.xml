@@ -1,0 +1,67 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" 
+	controllerName="com.eramet.maintenanceF5D.controller.InfoEquipment.Rattaches" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page>
+				<customHeader>
+					<Toolbar>
+						<Button icon="sap-icon://nav-back" press="onPressNavBack"/>
+						<!-- The currentLocationText set manually by id, because it depens on the type of the selected rattachés -->
+						<Breadcrumbs id="breadcrumbs" separatorStyle="GreaterThan" class="sapUiSmallMargin">
+							<Link press="onPressNavBack" text="{i18n>infoEquipmentTitle}" tooltip="{i18n>infoEquipmentTitle}"/>
+						</Breadcrumbs>
+					</Toolbar>
+				</customHeader>
+				<content>
+					<Toolbar>
+						<Button id="dateSelector" press="onPressDateInterval"/>
+						<Select id="status" width="100%" forceSelection="false" change="onSelectItem">
+							<items>
+								<c:Item text="{i18n>rattachesSelect1}" key="1"/>
+								<c:Item text="{i18n>rattachesSelect2}" key="2"/>
+								<c:Item text="{i18n>rattachesSelect3}" key="3"/>
+								<c:Item text="{i18n>rattachesSelect4}" key="4"/>
+							</items>
+						</Select>
+						<Select id="type" width="100%" forceSelection="false" change="onSelectItem">
+							<items>
+								<c:Item text="{i18n>rattachesTypeSelect1}" key="1"/>
+								<c:Item text="{i18n>rattachesTypeSelect2}" key="2"/>
+								<c:Item text="{i18n>rattachesTypeSelect3}" key="3"/>
+								<c:Item text="{i18n>rattachesTypeSelect4}" key="4"/>
+								<c:Item text="{i18n>rattachesTypeSelect5}" key="5"/>
+							</items>
+						</Select>
+						<Button icon="sap-icon://clear-filter" press="onPressClearFilter"/>
+					</Toolbar>
+					<List
+						id="detailList"
+						items="{path: 'avisRattachesModel>/'}">
+						<items>
+							<ObjectListItem 
+								title="{path: 'avisRattachesModel>title'}" 
+								type="Active" 
+								press="onPressNavToAvisDetail">
+								<firstStatus>
+									<ObjectStatus icon="{path: 'avisRattachesModel>icon'}"/>
+								</firstStatus>
+								<attributes>
+									<ObjectAttribute text="{path: 'avisRattachesModel>text'}" />
+									<ObjectAttribute text="{path: 'avisRattachesModel>date'}" />
+									<ObjectAttribute text="{path: 'avisRattachesModel>status'}" />
+									<ObjectAttribute text="{path: 'avisRattachesModel>type'}" />
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://sys-add" id="addButton" type="Ghost"/>
+					</Toolbar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

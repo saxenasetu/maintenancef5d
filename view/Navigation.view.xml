@@ -1,0 +1,85 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified" 
+	controllerName="com.eramet.maintenanceF5D.controller.Navigation" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Services" showNavButton="true" navButtonPress="onPressNavBack">
+				<content>
+					<!--<List id="list"-->
+					<!--	items="{ path: '/NotificationSet', sorter: { path: 'NotificationID', descending: true } }"-->
+					<!--	busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}"-->
+					<!--	growing="true" growingScrollToLoad="true"-->
+					<!--	growingThreshold="5">-->
+					<!--	<infoToolbar>-->
+					<!--		<Toolbar active="true" id="filterBar" visible="{masterView>/isFilterBarVisible}" press="onOpenViewSettings">-->
+					<!--			<Title id="filterBarLabel" text="{masterView>/filterBarLabel}"/>-->
+					<!--		</Toolbar>-->
+					<!--	</infoToolbar>-->
+					<!--	<items>-->
+					<!--		<ObjectListItem title="{NotificationID}">-->
+					<!--			<firstStatus>-->
+					<!--				<ObjectStatus text="{NotificationType}"/>-->
+					<!--			</firstStatus>-->
+					<!--			<attributes>-->
+					<!--				<ObjectAttribute text="{path:'NotificationDate'}" />-->
+					<!--			</attributes>-->
+					<!--		</ObjectListItem>-->
+					<!--	</items>-->
+					<!--</List>-->
+		
+					<Table id="table1" items="{path:'testModel1>/'}">
+						<columns>
+							<Column hAlign="Center">
+								<Text text="Desc"/>
+							</Column>
+							<Column hAlign="Center">
+								<Text text="Type"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{path:'testModel1>ProductName'}"/>
+									<Text text="{path:'testModel1>QuantityPerUnit'}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+		
+					<Table id="table2" items="{path:'testModel2>/'}">
+						<columns>
+							<Column hAlign="Center">
+								<Text text="Desc"/>
+							</Column>
+							<Column hAlign="Center">
+								<Text text="Type"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{path:'testModel2>ProductName'}"/>
+									<Text text="{path:'testModel2>QuantityPerUnit'}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+				<footer>
+					<Bar>
+						<contentLeft>
+					    	<Button text="Refresh1" width="80px" press="onRefreshButton1"/>
+				    		<Button text="Refresh2" width="80px" press="onRefreshButton2"/>
+						</contentLeft>
+						<contentMiddle>
+							<Button text="New record" press="onPressCreate"></Button>
+						</contentMiddle>
+						<contentRight>
+							<Button text="Send1" width="70px" press="onFlushButton1"/>
+							<Button text="Send2" width="70px" press="onFlushButton2"/>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

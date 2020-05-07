@@ -1,0 +1,280 @@
+{
+    "resources": [
+        {
+            "name": "../MaintenanceHAT/controller/InfoEquipment/InfoEquipment.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/manifest.json"
+        },
+        {
+            "name": "../MaintenanceHAT/i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/ToOpDetail.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/Operations.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/OTDetail.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/Followup.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/Filter.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/Article.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/InfoStock/InfoStock.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/InfoEquipment/Rattaches.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/model/items.json"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/InfoEquipment/DocumentTech.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/Avis/Detail.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/Avis/AvisDetail.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/util/util.js"
+        },
+        {
+            "name": "../MaintenanceHAT/util/formatter.js"
+        },
+        {
+            "name": "../MaintenanceHAT/model/models.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/WorkPage.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/Navigation.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/Menu.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/Home.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/HistoryOT.controller.js"
+        },
+        {
+            "name": "../MaintenanceHAT/controller/BaseController.js"
+        },
+        {
+            "name": "../MaintenanceHAT/Component.js"
+        },
+        {
+            "name": "../MaintenanceHAT/manifest-bundle.zip"
+        },
+        {
+            "name": "../MaintenanceHAT/Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/ToOpDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/Operations-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/OTDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/Followup-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/Filter-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/OT/Article-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/InfoStock/InfoStock-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/InfoEquipment/Rattaches-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/InfoEquipment/InfoEquipment-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/InfoEquipment/DocumentTech-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/Avis/Detail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/Avis/AvisDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/util/util-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/util/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/WorkPage-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/Navigation-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/Menu-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/Home-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/HistoryOT-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/controller/BaseController-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../MaintenanceHAT/Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "../MaintenanceHAT/view/fragment/valueHelp.fragment.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/fragment/stockSelector.fragment.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/fragment/searchOT.fragment.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/fragment/search.fragment.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/fragment/refusal.fragment.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/fragment/fileUpload.fragment.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/fragment/dateDialog.fragment.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/fragment/customerDialog.fragment.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/fragment/createPopup.fragment.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/OT/ToOpDetail.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/OT/Operations.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/OT/OTDetail.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/OT/Followup.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/OT/Filter.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/OT/Article.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/InfoStock/InfoStock.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/InfoEquipment/Rattaches.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/InfoEquipment/InfoEquipment.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/InfoEquipment/DocumentTech.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/Avis/Detail.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/Avis/AvisDetail.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/localService/northwind.svc/metadata.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/localService/EAM_NTF_CREATE/metadata.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/WorkPage.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/Navigation.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/Menu.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/Home.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/view/HistoryOT.view.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/localService/metadata.xml"
+        },
+        {
+            "name": "../MaintenanceHAT/css/style.css"
+        },
+        {
+            "name": "../MaintenanceHAT/index.html"
+        },
+        {
+            "name": "../MaintenanceHAT/extended_runnable_file.html"
+        }
+    ]
+}

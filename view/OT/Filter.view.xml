@@ -1,0 +1,53 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.eramet.maintenanceF5D.controller.OT.Filter" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>filterTitle}" showNavButton="true" navButtonPress="onPressNavBack">
+				<customHeader>
+					<Toolbar>
+						<Button icon="sap-icon://nav-back" press="onPressNavBack"/>
+						<!-- In this case the Breadcrumbs hasn't got id, because we can use the i18n property name to set the currentLocationText -->
+						<Breadcrumbs currentLocationText="{i18n>filterTitle}" separatorStyle="GreaterThan" class="sapUiSmallMargin">
+							<Link press="onPressNavBack" text="{i18n>followupLinkText2}" tooltip="{i18n>followupLinkText2}"/>
+						</Breadcrumbs>
+					</Toolbar>
+				</customHeader>
+				<content>
+					<VBox>
+						<Title text="{i18n>filterText1}" class="sapUiMediumMarginTop sapUiSmallMarginBegin"></Title>
+						<HBox class="sapUiSmallMargin">
+							<Button id="prio1" text="{i18n>filterPrioButton1}" class="sapUiSmallMargin" width="5rem" press="onPressPrio"/>
+							<Button id="prio2" text="{i18n>filterPrioButton2}" class="sapUiSmallMargin" width="5rem" press="onPressPrio"/>
+							<Button id="prio3" text="{i18n>filterPrioButton3}" class="sapUiSmallMargin" width="5rem" press="onPressPrio"/>
+						</HBox>
+						<Title text="{i18n>filterText2}" class="sapUiMediumMarginTop sapUiSmallMarginBegin"></Title>
+				
+						<RangeSlider 
+							id="rangeSlider" 
+							min="0"
+							max="4"
+							value=""
+							enableTickmarks="true" 
+							width="90%"
+							showAdvancedTooltip="true"
+							class="sapUiSmallMargin">
+							<ResponsiveScale tickmarksBetweenLabels="1" />
+						</RangeSlider>
+					</VBox>
+				</content>
+				<footer>
+					<Bar>
+						<contentLeft>
+							<Button text="{i18n>filterButton2}" press="onPressCancel" type="Ghost"/>
+						</contentLeft>
+						<contentMiddle>
+						</contentMiddle>
+						<contentRight>
+							<Button text="{i18n>filterButton1}" press="onPressNavBack" type="Ghost"/>
+						</contentRight>
+					</Bar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

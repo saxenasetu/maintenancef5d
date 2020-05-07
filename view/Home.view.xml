@@ -1,0 +1,75 @@
+<mvc:View controllerName="com.eramet.maintenanceF5D.controller.Home" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:tnt="sap.tnt">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" showHeader="false">
+					<content>
+						<HBox justifyContent="Center" alignItems="Center" id="box1" >	
+							<GenericTile 
+								header="{i18n>homeFirstTile}" 
+								press="onPressNavToAvis" 
+								class="sapUiSmallMargin"
+								visible="{path: 'tilesModel>/user', formatter: 'com.eramet.maintenanceF5D.util.formatter.setTile1Visibility'}">
+								<TileContent>
+									<ImageContent src="sap-icon://error"/>
+								</TileContent>
+							</GenericTile>
+							<GenericTile 
+								header="{i18n>homeSecondTile}" 
+								press="onPressNavToFollowup" 
+								class="sapUiSmallMargin"
+								visible="{path: 'tilesModel>/user', formatter: 'com.eramet.maintenanceF5D.util.formatter.setTile1Visibility'}">
+								<TileContent>
+									<ImageContent src="sap-icon://timesheet"/>
+								</TileContent>
+							</GenericTile>
+						</HBox>
+						
+						<HBox justifyContent="Center" alignItems="Center" id="box2" >
+							<GenericTile 
+								header="{i18n>homeThirdTile}" 
+								press="onPressNavToInfoEquipment" 
+								class="sapUiSmallMargin"
+								visible="{path: 'tilesModel>/user', formatter: 'com.eramet.maintenanceF5D.util.formatter.setTile2Visibility'}">
+								<TileContent>
+									<ImageContent src="sap-icon://message-information"/>
+								</TileContent>
+							</GenericTile>
+							<GenericTile 
+								header="{i18n>homeFourthTile}" 
+								press="onPressNavToInfoStock" 
+								class="sapUiSmallMargin"
+								visible="{path: 'tilesModel>/user', formatter: 'com.eramet.maintenanceF5D.util.formatter.setTile2Visibility'}">
+								<TileContent>
+									<ImageContent src="sap-icon://product"/>
+								</TileContent>
+							</GenericTile>
+						</HBox>
+						
+						<HBox justifyContent="Center" alignItems="Center" id="box3">
+							<GenericTile 
+								header="{i18n>homeSecondTile}" 
+								press="onPressNavToFollowup" 
+								class="sapUiSmallMargin"
+								visible="{path: 'tilesModel>/user', formatter: 'com.eramet.maintenanceF5D.util.formatter.setTile3Visibility'}">
+								<TileContent>
+									<ImageContent src="sap-icon://timesheet"/>
+								</TileContent>
+							</GenericTile>
+							<GenericTile 
+								header="{i18n>homeThirdTile}" 
+								press="onPressNavToInfoEquipment" 
+								class="sapUiSmallMargin"
+								visible="{path: 'tilesModel>/user', formatter: 'com.eramet.maintenanceF5D.util.formatter.setTile3Visibility'}">
+								<TileContent>
+									<ImageContent src="sap-icon://message-information"/>
+								</TileContent>
+							</GenericTile>
+						</HBox>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

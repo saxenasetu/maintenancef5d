@@ -1,0 +1,301 @@
+{
+    "resources": [
+        {
+            "name": "view/OT/Article.view.xml"
+        },
+        {
+            "name": "model/items.json"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "controller/OT/ToOpDetail.controller.js"
+        },
+        {
+            "name": "controller/OT/Operations.controller.js"
+        },
+        {
+            "name": "controller/OT/OTDetail.controller.js"
+        },
+        {
+            "name": "controller/OT/Followup.controller.js"
+        },
+        {
+            "name": "controller/OT/Filter.controller.js"
+        },
+        {
+            "name": "controller/OT/Article.controller.js"
+        },
+        {
+            "name": "controller/InfoStock/InfoStock.controller.js"
+        },
+        {
+            "name": "controller/InfoEquipment/Rattaches.controller.js"
+        },
+        {
+            "name": "controller/InfoEquipment/InfoEquipment.controller.js"
+        },
+        {
+            "name": "controller/InfoEquipment/DocumentTech.controller.js"
+        },
+        {
+            "name": "controller/Avis/Detail.controller.js"
+        },
+        {
+            "name": "controller/Avis/AvisDetail.controller.js"
+        },
+        {
+            "name": "util/util.js"
+        },
+        {
+            "name": "util/formatter.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "controller/WorkPage.controller.js"
+        },
+        {
+            "name": "controller/Navigation.controller.js"
+        },
+        {
+            "name": "controller/Menu.controller.js"
+        },
+        {
+            "name": "controller/Home.controller.js"
+        },
+        {
+            "name": "controller/HistoryOT.controller.js"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "manifest-bundle.zip"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "controller/BaseController-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/OT/ToOpDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/OT/Operations-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/OT/OTDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/OT/Followup-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/OT/Filter-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/OT/Article-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/InfoStock/InfoStock-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/InfoEquipment/Rattaches-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/InfoEquipment/InfoEquipment-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/InfoEquipment/DocumentTech-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Avis/Detail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Avis/AvisDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "util/util-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "util/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/WorkPage-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Navigation-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Menu-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Home-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/HistoryOT-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "view/fragment/valueHelp.fragment.xml"
+        },
+        {
+            "name": "view/fragment/stockSelector.fragment.xml"
+        },
+        {
+            "name": "view/fragment/searchOT.fragment.xml"
+        },
+        {
+            "name": "view/fragment/search.fragment.xml"
+        },
+        {
+            "name": "view/fragment/refusal.fragment.xml"
+        },
+        {
+            "name": "view/fragment/fileUpload.fragment.xml"
+        },
+        {
+            "name": "view/fragment/dateDialog.fragment.xml"
+        },
+        {
+            "name": "view/fragment/customerDialog.fragment.xml"
+        },
+        {
+            "name": "view/fragment/createPopup.fragment.xml"
+        },
+        {
+            "name": "view/fragment/avisUpload.fragment.xml"
+        },
+        {
+            "name": "view/OT/ToOpDetail.view.xml"
+        },
+        {
+            "name": "view/OT/Operations.view.xml"
+        },
+        {
+            "name": "view/OT/OTDetail.view.xml"
+        },
+        {
+            "name": "view/OT/Followup.view.xml"
+        },
+        {
+            "name": "view/OT/Filter.view.xml"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "view/InfoStock/InfoStock.view.xml"
+        },
+        {
+            "name": "view/InfoEquipment/Rattaches.view.xml"
+        },
+        {
+            "name": "view/InfoEquipment/InfoEquipment.view.xml"
+        },
+        {
+            "name": "view/InfoEquipment/DocumentTech.view.xml"
+        },
+        {
+            "name": "view/Avis/Detail.view.xml"
+        },
+        {
+            "name": "view/Avis/AvisDetail.view.xml"
+        },
+        {
+            "name": "localService/northwind.svc/metadata.xml"
+        },
+        {
+            "name": "localService/ZUI5_GW_PM_ORDER_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/ZUI5_GW_PM_NOTIF_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/Z_EAM_NTF_CREATE_EXT_SRV_01/metadata.xml"
+        },
+        {
+            "name": "localService/EAM_OBJPG_TECHNICALOBJECT_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/EAM_NTF_CREATE/metadata.xml"
+        },
+        {
+            "name": "localService/CV_ATTACHMENT_SRV/metadata.xml"
+        },
+        {
+            "name": "view/WorkPage.view.xml"
+        },
+        {
+            "name": "view/Navigation.view.xml"
+        },
+        {
+            "name": "view/Menu.view.xml"
+        },
+        {
+            "name": "view/Home.view.xml"
+        },
+        {
+            "name": "view/HistoryOT.view.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "fioriHtmlRunner.html"
+        },
+        {
+            "name": "extended_runnable_file.html"
+        }
+    ]
+}

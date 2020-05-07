@@ -1,0 +1,89 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" 
+	controllerName="com.eramet.maintenanceF5D.controller.AvisDetail" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page id="avisDetail"  showNavButton="true" navButtonPress="backToAvis">
+				<OverflowToolbar class="toolbar">
+					<Button icon="sap-icon://home" type="Default" press="backToHome">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+		
+					<Button type="Default" text="{i18n>avisLinkText}" tooltip="{i18n>avisLinkText}" press="backToAvis">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+
+					<Button type="Default" id="finalText" press="onPressNavBack" visible="false">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+
+					<Button type="Default" id="finalText2" enabled="false">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</layoutData>
+					</Button>
+				</OverflowToolbar>
+				<content>
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>	
+							<Label text="{i18n>avisDetailAuteur}"/>
+							<Input editable="false"/>
+							
+							<Label text="{i18n>avisDetailDescription}"/>
+							<Input editable="false"/>
+							
+							<Label text="{i18n>avisDetailDate}"/>
+							<DateTimePicker editable="false"/>
+							
+							<Label text="{i18n>avisDetailEquipement}"/>
+							<Input editable="false"/>
+							
+							<Label text="{i18n>avisDetailExploitation}"/>
+							<Input editable="false"/>
+							
+							<Label text="{i18n>avisDetailCriticite}"/>
+							<Input editable="false"/>
+							
+							<Label text="{i18n>avisDetailComment}"/>
+							<TextArea rows="4"/>
+							
+							<Label text="{i18n>avisDetailResponsable}"/>
+							<Input editable="false"/>
+							
+							<Label text="{i18n>avisDetailExecutant}"/>
+							<Input />
+							
+							<Label text="{i18n>avisDetailRepercussion}"/>
+							<Input editable="false"/>
+							
+							<Label text=""/>
+							<CheckBox text="{i18n>avisDetailArrete}" />
+							
+							<Label text="{i18n>avisDetailSouhaite}"/>
+							<Input />
+							
+							<Label text="{i18n>avisDetailLocalisation}"/>
+							<Input editable="false"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+				<footer>
+					<Bar>
+						<contentLeft>
+							<Button press="onPressRepousser" text="{i18n>avisDetailButtonText1}" tooltip="{i18n>avisDetailButtonText1}" type="Emphasized"/>
+							<Button press="onPressDemarrer" text="{i18n>avisDetailButtonText2}" tooltip="{i18n>avisDetailButtonText2}" type="Default"/>
+						</contentLeft>
+						<contentMiddle></contentMiddle>
+						<contentRight></contentRight>
+					</Bar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
